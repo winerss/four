@@ -240,9 +240,12 @@ export default {
       background #fff
     .information
       padding 0 1.8rem 1.5rem
-      background #111216
+      // background #111216
       color #cda041
       border-bottom 1px solid #cda041
+      @media (min-width 1024px) {
+        padding 1.5rem 10%
+      }  
       .header
         display flex
         justify-content space-between
@@ -273,7 +276,7 @@ export default {
       height 2.4rem
       padding .5rem 0
       text-align center
-      background #111216
+      // background #111216
       color #cda041
       margin-bottom .8rem
       .consume, .cash

@@ -80,6 +80,9 @@ export default {
     }
     .center
       width 60%
+      @media (min-width 1024px) {
+        width 30%
+      }
       margin 0 auto
       display flex
       justify-content center

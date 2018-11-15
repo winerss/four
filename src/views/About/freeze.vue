@@ -101,6 +101,11 @@ export default {
       width: 90%;
       margin: 1rem auto;
       padding: 1rem 0;
+      @media (min-width 1024px) {
+        width 80%
+        margin 1rem auto
+        padding 2rem 0
+      }
       color: #ebebeb;
       text-align: center;
       -webkit-box-shadow: 0px 2px 1px 3px #333;
@@ -127,6 +132,10 @@ export default {
         box-shadow 0px 0px 10px 2px #cda041
       .current
         font-size .8rem
+        @media (min-width 1024px) {
+          font-size 1rem
+          line-height 2rem
+        }
       .curMoney
         font-size 1.6rem
         line-height 3rem
@@ -134,6 +143,9 @@ export default {
       .month
         display flex
         justify-content space-around
+        @media (min-width 1024px) {
+          font-size 1.8rem
+        }
     .detail
       margin-top 1rem
       .title

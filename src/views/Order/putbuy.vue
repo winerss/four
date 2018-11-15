@@ -175,6 +175,11 @@ export default {
   right .6rem
   bottom 0
   overflow-y: scroll;
+  @media (min-width 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .mint-radio-input:checked + .mint-radio-core
     background-color rgb(205,160,65)
     border-color #cda041

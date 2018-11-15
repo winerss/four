@@ -135,6 +135,11 @@ export default {
   width 100%
   bottom 0
   overflow hidden
+  @media (min-width 1024px) {
+    width 900px
+    left 50%
+    margin-left -450px
+  }  
   .title
     display flex
     position absolute

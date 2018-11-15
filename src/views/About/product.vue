@@ -345,6 +345,11 @@ export default {
       bottom 0
       overflow auto
       width 100%
+      @media (min-width 1024px) {
+        width 900px
+        left 50%
+        margin-left -450px
+      }  
       .title
         padding 0 .8rem
         margin .8rem 0

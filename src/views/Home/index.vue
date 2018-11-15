@@ -317,6 +317,11 @@ window.reviced = function (res) {
       width 90%
       margin 0 auto
       padding 1rem 0 0
+      @media (min-width 1024px) {
+        width 80%
+        margin 1rem auto
+        padding 2rem 0
+      }
       color #ebebeb
       background #0f0f0f
       text-align center
@@ -340,17 +345,27 @@ window.reviced = function (res) {
         -webkit-transform:rotateX(0deg) rotateY(0deg);
         opacity:1;
         box-shadow 0px 0px 10px 2px #cda041
-      .title1
+      .title
         font-size .8rem
-        line-height 2rem
+        line-height 1rem
+        @media (min-width 1024px) {
+          font-size 1rem
+          line-height 2rem
+        }
       .money1
         font-size 1.6rem
         color #cda041
         line-height 3rem
+        @media (min-width 1024px) {
+          font-size 1.8rem
+        }
       .money2
         font-size 1rem
         color #cda041
         line-height 3rem
+        @media (min-width 1024px) {
+          font-size 1.2rem
+        }
     .center
       height 8rem
       color #ebebeb
@@ -361,12 +376,19 @@ window.reviced = function (res) {
         width 2rem
     .mint-swipe
       height 8rem
+      @media (min-width 1024px) {
+        height 16rem
+      }
     .integration
       display flex
       height 3rem
       padding .8rem 0
       text-align center
       color #cda041
+      @media (min-width 1024px) {
+        width 80%
+        margin 0 auto
+      }
       .consume, .cash
         flex 1
         .title
