@@ -77,7 +77,7 @@ export default {
         title: '设置',
         tel: '手机号码',
         modlog: '修改登录密码',
-        modpay: '修改交易密码',
+        modpay: '修改支付密码',
         lang: '语言设置',
         clear: '清除缓存',
         about: '关于',
@@ -104,9 +104,14 @@ export default {
   font-size .8rem
   background #f5f5f5
   color #000
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .container
     position absolute
-    top 2.8rem
+    top 2.4rem
     bottom 0
     left 0
     right 0
@@ -129,6 +134,6 @@ export default {
       display block
       width 90%
       margin 1rem auto
-      background #cda041
+      background #26a2ff
       color #fff
 </style>

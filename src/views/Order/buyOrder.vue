@@ -14,29 +14,24 @@
       <div class="wrapper" ref="wrapper">
         <div class="items">
           <div class="item" v-for="(item, index) in items" :key="index">
-            <div class="text">
-              <p class="nick-name">{{item.self_nickname}}</p>
-              <p class="item-time">{{item.create_time}}</p>
-              <!-- <p class="item-sign" style="color: #cda041;" v-if="item.sign === '1'">挂释放钱包</p> -->
-              <p class="item-sign" style="color: #cda041;" v-if="item.sign === '1'">挂现金积分</p>
-            </div>
+            <p class="item-time">{{item.create_time}}</p>
             <div class="item-body">
               <div class="left">
                 <p>数量（个）</p>
-                <p class="money">{{item.amount}}</p>
+                <p>{{item.amount}}</p>
               </div>
               <div class="center">
                 <p>单价（元）</p>
-                <p class="money">{{item.price}}</p>
+                <p>{{item.price}}</p>
               </div>
               <div class="right">
                 <p>总计（元）</p>
-                <p class="money">{{(item.amount * item.price).toFixed(5)}}</p>
+                <p>{{item.amount * item.price}}</p>
               </div>
             </div>
             <div class="item-footer">
               <div class="right">
-                <mt-button @click.native="match_transfer_action(item.id)" size="small" v-if="item.is_match === 1" style="color: #cda041">成交</mt-button>
+                <mt-button @click.native="match_transfer_action(item.id)" size="small" v-if="item.is_match === 1" style="color: #26a2ff">匹配</mt-button>
               </div>
             </div>
           </div>
@@ -132,62 +127,67 @@ export default {
 <style lang="stylus">
 #buyOrder
   position absolute
-  top 2.8rem
+  top 2.4rem
   width 100%
   bottom 0
   overflow hidden
+  background #f5f5f5
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .title
     display flex
     position absolute
     z-index 2
     top 0
     width 100%
-    height 2.6rem
-    line-height 2.6rem
+    height 2rem
+    background #fff
+    line-height 2rem
     text-align center
-    color #cda041
-    border-bottom 1px solid rgb(105, 105, 105)
+    color #999
     p
       flex 1
   .title-price
     display flex
     position absolute
     z-index 2
-    top 2.6rem
+    top 2rem
     width 100%
-    height 2.6rem
-    line-height 2.6rem
+    height 2rem
+    background #fff
+    line-height 2rem
     text-align center
-    color #ebebeb
-    border-bottom 1px solid rgb(105, 105, 105)
+    color #999
     p
       flex 1
   .content
     position absolute
-    top 5.2rem
+    top 4.4rem
     left 0
     right 0
     bottom 0
     .items
-      color #ebebeb
+      color #999
       .item
-        margin-bottom .6rem
-        border-top 1px solid  rgb(105, 105, 105)
-        border-bottom 1px solid  rgb(105, 105, 105)
-        .text
-          padding 0 .6rem
-          display flex
-          justify-content space-between
-          line-height 2.6rem
+        margin-bottom .4rem
+        border-top 1px solid #ddd
+        border-bottom 1px solid #ddd
+        background #fff
+        .item-time
+          text-align right
+          line-height 1.6rem
           padding-right .6rem
         .item-body
           padding 0 .6rem
+          border-top 1px solid #ebebeb
+          border-bottom 1px solid #ebebeb
           display flex
           justify-content space-between
-          line-height 1.8rem
+          line-height 1.6rem
           text-align center
-          .money
-            color #ebebeb
         .item-footer
           overflow hidden
           button

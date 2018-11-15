@@ -259,6 +259,11 @@ export default {
   font-size .8rem
   background #f5f5f5
   color #000
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .address-picker
     display flex
   .picker

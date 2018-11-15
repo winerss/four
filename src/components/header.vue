@@ -5,7 +5,6 @@
         <img src="../assets/img/back.png" alt="">
         {{data.back}}
       </p>
-      <p v-if="showHome"><slot name="home"></slot></p>
     </div>
     <div class="center">
       <p v-if="showTitle"><slot name="title"></slot></p>
@@ -33,10 +32,6 @@ export default {
       default: true
     },
     showRight: {
-      type: Boolean,
-      default: false
-    },
-    showHome: {
       type: Boolean,
       default: false
     }
@@ -81,23 +76,25 @@ export default {
   display flex
   z-index 2
   top 0
-  left 0
-  right 0
-  height 2.8rem
-  line-height 3rem
+  width 100%
+  height 2.4rem
+  line-height 2.4rem
   font-weight bold
-  background rgb(15,15,15)
-  color #cda041
+  background #1b82d2
+  color #fff
   justify-content space-between
   text-align center
-  font-size .8rem
-  border-bottom: 1px solid rgb(229, 208, 153);
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .center
     position absolute
     left 0
     right 0
     top 0
-    height 3.4rem
+    height 2.4rem
     z-index 1
   .left
     position absolute
@@ -106,11 +103,9 @@ export default {
     img
       float left
       height .8rem
-      margin-top 1.1rem
+      margin-top .8rem
   .right
     position absolute
     z-index 4
     right .6rem
-    img
-      margin-top .6rem
 </style>

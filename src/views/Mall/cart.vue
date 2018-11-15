@@ -184,6 +184,11 @@ export default {
   left 0
   right 0
   color #666
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .container
     position absolute
     top 2.8rem

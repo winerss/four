@@ -6,21 +6,15 @@
     <div class="container">
       <mt-navbar class="page-part" v-model="selected">
         <mt-tab-item @click.native="getdata()" id="1">全部</mt-tab-item>
-        <mt-tab-item @click.native="getdata('2')" id="2">已取消</mt-tab-item>
-        <mt-tab-item @click.native="getdata('0')" id="3">待交易</mt-tab-item>
-        <mt-tab-item @click.native="getdata('3')" id="4">交易中</mt-tab-item>
-        <mt-tab-item @click.native="getdata('1')" id="5">已完成</mt-tab-item>
+        <mt-tab-item @click.native="getdata('0')" id="2">待交易</mt-tab-item>
+        <mt-tab-item @click.native="getdata('3')" id="3">交易中</mt-tab-item>
+        <mt-tab-item @click.native="getdata('1')" id="4">已完成</mt-tab-item>
       </mt-navbar>
       <div class="content">
         <div class="wrapper" ref="wrapper">
           <div class="items">
             <div class="item" v-for="(item, index) in data" :key="index">
-              <div style="overflow:hidden;display:flex;justify-content:space-between;line-height: 2rem;padding: 0 .6rem;">
-                <p>{{item.username}}</p>
-                <p>{{item.create_time}}</p>
-                <!-- <p class="item-sign" style="color: #cda041;" v-if="item.sign === '1'">挂释放钱包</p> -->
-                <p class="item-sign" style="color: #cda041;" v-if="item.sign === '1'">挂现金积分</p>
-              </div>
+              <p class="item-time">{{item.create_time}}</p>
               <div class="item-body">
                 <div class="left">
                   <p>数量（个）</p>
@@ -32,20 +26,20 @@
                 </div>
                 <div class="right">
                   <p>总计（元）</p>
-                  <p>{{(item.amount * item.price).toFixed(5)}}</p>
+                  <p>{{item.amount * item.price}}</p>
                 </div>
               </div>
               <div class="item-footer">
                 <div class="left">
-                  <mt-button size="small" v-if="item.type === '1'" style="color: #cda041">买单</mt-button>
-                  <mt-button size="small" v-if="item.type === '2'" style="color: #CD0000">卖单</mt-button>
+                  <mt-button size="small" v-if="item.type === '1'" style="color: #26a2ff">买单</mt-button>
+                  <mt-button size="small" v-if="item.type === '2'" style="color: #f00">卖单</mt-button>
                 </div>
                 <div class="right">
-                  <mt-button size="small" v-if="item.status === '1'" style="color: #cda041">已完成</mt-button>
-                  <mt-button size="small" v-if="item.status === '1' || item.status === '3'" @click.native="getTel(item.id)" style="color: #cda041">拨打电话</mt-button>
-                  <mt-button size="small" v-if="item.status === '1' || item.status === '3'" @click.native="contact(item.id)" style="color: #cda041">联系买家</mt-button>
-                  <mt-button size="small" v-if="item.can_cancel === 1" @click.native="cancel(item.id)" style="color: #cda041">取消订单</mt-button>
-                  <mt-button size="small" v-if="item.can_shou === 1 && item.status === '3'" @click="confirm(item.id)" style="backgroundColor: #cda041;color:#fff;">确认收款</mt-button>
+                  <mt-button size="small" v-if="item.status === '1'" style="color: #26a2ff">已完成</mt-button>
+                  <mt-button size="small" v-if="item.status === '1' || item.status === '3'" @click.native="getTel(item.id)" style="color: #26a2ff">拨打电话</mt-button>
+                  <mt-button size="small" v-if="item.status === '1' || item.status === '3'" @click.native="contact(item.id)" style="color: #26a2ff">联系买家</mt-button>
+                  <mt-button size="small" v-if="item.can_cancel === 1" @click.native="cancel(item.id)" style="color: #26a2ff">取消订单</mt-button>
+                  <mt-button size="small" v-if="item.can_shou === 1 && item.status === '3'" @click="confirm(item.id)" style="backgroundColor: #26a2ff;color:#fff;">确认收款</mt-button>
                 </div>
               </div>
             </div>
@@ -149,12 +143,6 @@ export default {
               this.data.push(element)
             }
           })
-        } else if (status === '2') { // 取消
-          response.data.data.forEach(element => {
-            if (element.status === '2') {
-              this.data.push(element)
-            }
-          })
         } else if (status === '3') { // 交易中
           response.data.data.forEach(element => {
             if (element.status === '3') {
@@ -185,7 +173,8 @@ export default {
   right 0
   bottom ０
   font-size .8rem
-  color #999
+  background #f5f5f5
+  color #000
   .mint-popup-bottom
     width 100%
   .mint-cell
@@ -204,15 +193,10 @@ export default {
         outline none
   .container
     position absolute
-    top 2.8rem
+    top 2.4rem
     bottom 0
     left 0
     right 0
-    .mint-navbar
-      background none
-      .is-selected
-       color #cda041
-       border-bottom: 3px solid #cda041;
     .content
       position absolute
       top 4rem
@@ -224,7 +208,7 @@ export default {
           margin-bottom .4rem
           border-top 1px solid #ddd
           border-bottom 1px solid #ddd
-          color #999
+          background #fff
           .item-time
             text-align right
             line-height 1.6rem
@@ -245,6 +229,4 @@ export default {
               padding 0 .4rem
               font-size .8rem
               height 1.4rem
-              background #cda041
-              color #ebebeb !important
 </style>

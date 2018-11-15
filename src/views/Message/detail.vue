@@ -4,11 +4,7 @@
         <div class="wrapper">
           <div class="items">
             <div class="item" v-for="(item, index) in data" :key="index">
-              <p :class="item.is_self === 0 ? 'class-a' : 'class-b'">
-                <span v-show="item.is_self === 0"></span>
-                <span v-show="item.is_self === 1"></span>
-                {{item.content}}
-              </p>
+              <p :class="item.is_self === 0 ? 'class-a' : 'class-b'">{{item.content}}</p>
             </div>
           </div>
         </div>
@@ -84,87 +80,62 @@ export default {
 
 <style lang="stylus">
 #messdetail
-  position absolute
-  top 0
-  left 0
-  right 0
-  bottom 0
-  font-size .8rem
-  color #999
-  overflow-y scroll
-  -webkit-overflow-scrolling touch
-  &::-webkit-scrollbar
-    display none
   #container
     .wrapper
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 2rem
+      background #f5f5f5
+      font-size .8rem
+      color #000
+      @media (min-width: 1024px) {
+        width 1024px
+        left 50%
+        margin-left -512px
+      }
       .items
-        padding-bottom 3rem
-        overflow hidden
+        padding-bottom 5rem
         .item
-          padding 0 1.4rem
+          padding 0 .6rem
           p
-            display inline-block
-            line-height 1.4rem
+            line-height 2rem
             margin-top .4rem
-            padding .2rem .4rem
           .class-a
-            position relative
-            float right
-            clear both
-            text-align left
-            background #cda041
-            border-radius .4rem
-            color #fff
-            padding-right .4rem
-            span
-              position absolute
-              right -10px
-              top 5px
-              display block
-              width: 0;
-              height: 0;
-              border-width: 10px
-              border-style: solid;
-              border-color: #cda041 transparent transparent transparent;
-          .class-b
-            position relative
-            float left
-            clear both
-            text-align left
+            text-align right
             background #ccc
             border-radius .4rem
             color #fff
+            padding-right .4rem
+          .class-b
+            text-align left
+            background #26a2ff
+            border-radius .4rem
+            color #fff
             padding-left .4rem
-            span
-              position absolute
-              left -10px
-              top 5px
-              display block
-              width: 0;
-              height: 0;
-              border-width: 10px;
-              border-style: solid;
-              border-color: #ccc transparent transparent transparent;
   .bottom
     position fixed
+    border-top 1px solid #ccc
     left 0
     right 0
-    bottom 0
-    height 2.4rem
-    line-height 2.4rem
+    bottom 2.6rem
+    height 2rem
+    line-height 2rem
     text-align center
-    color #cda041
+    background #ccc
+    color #26a2ff
     input
       float left
       width 60%
-      height 2.4rem
-      line-height 2.4rem
+      height 2rem
+      line-height 2rem
       outline none
     button
       float right
       width 40%
-      height 2.4rem
+      height 2rem
       border none
       color #fff
-      background #cda041
+      background #26a2ff
 </style>

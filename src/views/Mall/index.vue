@@ -128,6 +128,11 @@ export default {
   bottom 0
   left 0
   right 0
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .item
     float left
     width 44%

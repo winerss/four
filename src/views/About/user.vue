@@ -4,13 +4,13 @@
       <p slot="title">个人资料</p>
     </Header>
     <div class="container">
-      <!-- <mt-cell title="头像" is-link>
-        <img style="height: 30px;" src="../../assets/img/logo.jpg" alt="">
-      </mt-cell> -->
-      <mt-cell title="用户名">
-        <p>{{data.nickname}}</p>
+      <mt-cell title="头像" is-link>
+        <img style="height: 30px;" src="../../assets/img/avatar.png" alt="">
       </mt-cell>
-      <!-- <mt-cell title="昵称" is-link></mt-cell> -->
+      <mt-cell title="用户名">
+        <p>winerss</p>
+      </mt-cell>
+      <mt-cell title="昵称" is-link></mt-cell>
     </div>
   </div>
 </template>
@@ -22,22 +22,8 @@ export default {
   data () {
     return {
       showTitle: true,
-      showLeft: true,
-      data: {}
+      showLeft: true
     }
-  },
-  methods: {
-    get_user_info () {
-      var params = new FormData()
-      params.append('sid', localStorage.getItem('sid'))
-      this.axios.post(process.env.API_ROOT + '/api/user/get_user_info', params).then((res) => {
-        let data = res.data
-        this.data = data.data
-      })
-    }
-  },
-  mounted () {
-    this.get_user_info()
   },
   components: {
     Header
@@ -55,9 +41,14 @@ export default {
   font-size .8rem
   background #f5f5f5
   color #000
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .container
     position absolute
-    top 2.8rem
+    top 2.4rem
     bottom 0
     left 0
     right 0

@@ -50,10 +50,15 @@ export default {
 
 <style lang="stylus">
 #putup
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .navbar
-    margin-top 2.8rem
+    margin-top 2.4rem
     display flex
-    font-size .8rem
+    background #000
     p
       flex 1
       height 2.4rem
@@ -63,8 +68,8 @@ export default {
         display inline-block
         height 2.3rem
         width 80%
-        color #ebebeb
+        color #fff
       .router-link-active
-        color #cda041
-        border-bottom .1rem solid #cda041
+        color #26a2ff
+        border-bottom .1rem solid #26a2ff
 </style>

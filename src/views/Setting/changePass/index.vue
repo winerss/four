@@ -11,7 +11,7 @@
         <mt-field :label="lang.label2" v-model="form.tel" readonly :placeholder="lang.placeholder"></mt-field>
         <mt-cell class="share" :title="lang.label3">
           <input type="text" v-model="form.code" :placeholder="lang.placeholder2">
-          <p v-show="codeSta" @click="getCode" style="font-size: 0.8rem;color:#cda041;">获取验证码</p>
+          <p v-show="codeSta" @click="getCode" style="font-size: 0.8rem;color:#26a2ff;">获取验证码</p>
           <mt-button v-show="!codeSta" size="small"  style="font-size: 0.6rem;" type="primary">{{time + ' 秒后获取'}}</mt-button>
         </mt-cell>
       </div>
@@ -73,7 +73,7 @@ export default {
       var params = new FormData()
       params.append('tel', this.form.tel)
       if (this.params === 'pay') {
-        params.append('type', '修改交易密码')
+        params.append('type', '修改支付密码')
       } else {
         params.append('type', '修改密码')
       }
@@ -128,7 +128,7 @@ export default {
       if (localStorage.getItem('language') === 'en') {
         this.title = 'Reset PayPassword'
       } else {
-        this.title = '重置交易密码'
+        this.title = '重置支付密码'
       }
     } else {
       if (localStorage.getItem('language') === 'en') {
@@ -170,14 +170,20 @@ export default {
 #change-pass
   position absolute
   top 0
-  left 0.6rem
-  right 0.6rem
+  left 0
+  right 0
   bottom 0
   font-size .8rem
-  color #999
+  background #f5f5f5
+  color #000
+  @media (min-width: 1024px) {
+    width 1024px
+    left 50%
+    margin-left -512px
+  }
   .container
     position absolute
-    top 2.8rem
+    top 2.4rem
     bottom 0
     left 0
     right 0
@@ -187,35 +193,31 @@ export default {
       display none
     .items
       .mint-cell
-        border-bottom 1px solid #999
-        background none
+        border-bottom 1px solid #ddd
+        background #fff
         .mint-cell-wrapper
           background-image none
-          .mint-cell-value
-            font-size .8rem
         .mint-cell-title
           width 80px
         .mint-cell-text
           vertical-align top
           font-size .8rem
         .mint-cell-value
-          p
-            font-size .8rem
           input
             font-size .8rem
-            color #999
+            color #333
             outline none
-            background none
+            background #fff
     .tips
       margin-top 1rem
       color #999
     .confirm
       display block
-      width 80%
+      width 90%
       margin 1rem auto
       background #999
       color #ccc
     .active
-      background #cda041
+      background #26a2ff
       color #fff
 </style>

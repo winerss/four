@@ -58,29 +58,31 @@ export default {
 #qrcode
   .container
     position absolute
-    top 2.8rem
+    top 2.4rem
     bottom 0
     left 0
     right 0
     padding 0 .8rem
     overflow-y scroll
+    background #f5f5f5
     text-align center
-    color #cda041
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
+    @media (min-width: 1024px) {
+      width 1024px
+      left 50%
+      margin-left -512px
+    }
     .qrcode
-      padding .4rem
-      margin 2rem auto 0
+      padding 2rem
+      margin 1rem auto
+      background #fff
       img
         margin 0 auto
-        background #fff
-        padding .4rem
-        border 4px solid rgba(205,160,65,0.7)
-        border-radius 1rem
       .name
         font-size 1.2rem
         line-height 3rem
       .tips
-        line-height 1rem
+        line-height 2rem
 </style>
