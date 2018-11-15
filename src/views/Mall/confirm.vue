@@ -288,11 +288,6 @@ export default {
   bottom 0
   left 0.6rem
   right 0.6rem
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .address-picker
     display flex
   .picker

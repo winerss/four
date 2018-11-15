@@ -5,7 +5,7 @@
       <p slot="right" @click="toggle">筛选</p>
     </Header>
     <div class="container">
-      <div class="btn-group" v-show="show">
+      <div class="btn-group animated slideInDown"  v-show="show">
         <mt-button v-for="(item, index) in btns" @click.native="picker(item.id)" :key="index" size="small" type="default">{{item.name}}</mt-button>
       </div>
       <div class="items">
@@ -34,7 +34,7 @@ export default {
       showRight: true,
       show: true,
       items: [],
-      btns: [{id: 0, name: '全部'}, {id: 1, name: '消费积分'}, {id: 2, name: '现金积分'}, {id: 3, name: '释放积分'}, {id: 4, name: '冻结钱包'}, {id: 5, name: '消费收益'}, {id: 6, name: '算力释放'}, {id: 7, name: '发送/接收'}, {id: 8, name: '交易'}, {id: 4, name: '存入钱包'}]
+      btns: [{id: 0, name: '全部'}, {id: 1, name: '消费积分'}, {id: 2, name: '现金积分'}, {id: 4, name: '冻结钱包'}, {id: 5, name: '消费收益'}, {id: 6, name: '算力释放'}, {id: 7, name: '发送/接收'}, {id: 8, name: '交易'}, {id: 4, name: '存入钱包'}]
     }
   },
   methods: {
@@ -62,30 +62,25 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '../../../static/animate.css'
 #orderRecord
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
-    background #f5f5f5
     overflow-y scroll
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
-    @media (min-width: 1024px) {
-      width 1024px
-      left 50%
-      margin-left -512px
-    }
     .btn-group
       position fixed
       top 2.4rem
       left 0
       right 0
-      bottom 0
-      background rgb(255 , 255, 255)
+      padding 1rem 0
+      background #0f0f0f
       font-size 0
       button
         width 30%
@@ -94,14 +89,20 @@ export default {
     .items
       color #333
       .item
-        background #ffffff
-        padding 0 .6rem
+        padding .4rem .6rem
         margin-top 8px;
-        height 60px
-        line-height 30px
-        border-top 1px solid #ddd
-        border-bottom 1px solid #ddd
+        height 2.4rem
+        line-height 1.2rem
+        border-top 1px solid #999
+        border-bottom 1px solid #999
         .top,.bottom
           display flex
           justify-content space-between
+          color #CD0000
+        .top
+          p:nth-child(1)
+            color #cda041
+        .bottom
+          p:nth-child(1)
+            color #999
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div id="convert">
     <Header :showLeft="showLeft" :showTitle="showTitle">
-      <p slot="title">兑换消费积分</p>
+      <p slot="title">兑换注册积分</p>
     </Header>
     <div class="container">
       <mt-field label="转入数量" placeholder="数量不能低于10，并小于20%" v-model='form.amount'></mt-field>
-      <mt-field label="支付密码" type="password" placeholder="请输入≥6的字母+数字的密码" v-model='form.password'></mt-field>
-      <mt-button size="small" :class="{ active: isActive }" @click="confirm" class="confirm">兑换消费积分</mt-button>
+      <mt-field label="交易密码" type="password" placeholder="请输入≥6的字母+数字的密码" v-model='form.password'></mt-field>
+      <mt-button size="small" :class="{ active: isActive }" @click="confirm" class="confirm">兑换注册积分</mt-button>
     </div>
   </div>
 </template>
@@ -44,6 +44,7 @@ export default {
       var params = new FormData()
       params.append('sid', localStorage.getItem('sid'))
       params.append('amount', this.form.amount)
+      params.append('erji', this.form.password)
       this.axios.post(process.env.API_ROOT + '/api/transfer/ice_zhuce', params).then((res) => {
         let data = res.data
         this.$toast({
@@ -51,6 +52,9 @@ export default {
           position: 'bottom',
           duration: 1000
         })
+        if (data.code === 1) {
+          this.$router.push('/home')
+        }
       })
     }
   },
@@ -70,11 +74,6 @@ export default {
   font-size .8rem
   background #f5f5f5
   color #000
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .mint-cell
     margin-top .4rem
   .mint-popup-bottom
@@ -86,7 +85,7 @@ export default {
       width 80px
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
@@ -101,6 +100,6 @@ export default {
       margin 1rem auto
       background #ddd
     .active
-      background #26a2ff
+      background #cda041
       color #fff
 </style>

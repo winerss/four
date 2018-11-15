@@ -5,15 +5,15 @@
     </Header>
     <div class="container">
       <div class="logo">
-        <img src="../../assets/img/avatar.png" alt="">
+        <img src="../../assets/img/logo_i.png" alt="">
         <p class="info">{{lang.version}} 1.0.0</p>
       </div>
       <div class="items">
-        <mt-cell :title="lang.label" is-link>
+        <mt-cell :title="lang.label">
           <p>{{lang.content}}</p>
         </mt-cell>
-        <mt-cell :title="lang.label2" is-link>
-        </mt-cell>
+        <!-- <mt-cell :title="lang.label2" is-link>
+        </mt-cell> -->
       </div>
     </div>
   </div>
@@ -26,7 +26,8 @@ export default {
   data () {
     return {
       showLeft: true,
-      showTitle: true
+      showTitle: true,
+      lang: {}
     }
   },
   components: {
@@ -66,31 +67,25 @@ export default {
   right 0
   bottom 0
   font-size .8rem
-  background #f5f5f5
-  color #000
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
+  color #cda041
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
-    left 0
-    right 0
+    left .6rem
+    right 0.6rem
     overflow-y scroll
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
     .logo
-      margin-top 2rem
+      margin-top 3rem
       text-align center
       img
         height 4rem
       .info
         margin-top 1rem
-        margin-bottom .5rem
+        margin-bottom 2.5rem
     .items
       .mint-cell-wrapper
         background-image none
@@ -99,8 +94,13 @@ export default {
           width 80px
       .mint-cell
         margin-top .8rem
-        color #333
-        border-bottom 1px solid #ddd
+        color #ebebeb
+        background none
+        border-top 1px solid #999
+        border-bottom 1px solid #999
+        .mint-cell-value
+          font-size .8rem
+          color #cda041
         .mint-cell-text
           font-size .8rem
       .mint-cell:last-child

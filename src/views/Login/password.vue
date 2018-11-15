@@ -1,5 +1,5 @@
 <template>
-  <div id="register">
+  <div id="password">
     <Header :showLeft="showLeft">
       <p slot="title">找回密码</p>
     </Header>
@@ -10,8 +10,8 @@
     </div>
     <mt-field label="手机号码" v-model="form.tel" placeholder="请输入手机号码"></mt-field>
     <mt-cell title="验证码">
-      <input type="text" v-model="form.code">
-      <p v-show="codeSta" @click="getCode" style="font-size: 0.8rem;color:#26a2ff;">获取验证码</p>
+      <input type="text" v-model="form.code" placeholder="请输入验证码">
+      <p v-show="codeSta" @click="getCode" style="font-size: 0.8rem;color:#cda041;">获取验证码</p>
       <mt-button v-show="!codeSta" size="small" style="font-size: 0.6rem;" type="primary">{{time + ' 秒后获取'}}</mt-button>
     </mt-cell>
     <mt-field label="用户名" placeholder="请输入用户名"  v-model="form.name"></mt-field>
@@ -123,12 +123,8 @@ export default {
 </script>
 
 <style lang="stylus">
-#register
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
+#password
+  padding 0 .6rem
   .telphone
     border-top 1px solid #ddd
     margin-top 2.8rem
@@ -138,27 +134,31 @@ export default {
         flex inherit
         width 80px
   .mint-cell
-    border-bottom 1px solid #ddd
-    background #fff
+    border-bottom 1px solid #999
+    background none
     .mint-cell-wrapper
       background-image none
     .mint-cell-title
       width 80px
+      flex inherit
     .mint-cell-text
       vertical-align top
       font-size .8rem
+      color #cda041
     .mint-cell-value
-      input
+      input, p
         font-size .8rem
-        color #333
+        color #999
         outline none
-        background #fff
+        background none
+      p
+        color #999
   .price
     height 26px
     line-height 26px
     padding 0 .8rem
     background #ddd
-    color #26a2ff
+    color #cda041
   .total
     display flex
     p
@@ -166,15 +166,15 @@ export default {
       line-height 26px
       flex 1
       background #ddd
-      color #26a2ff
+      color #cda041
       text-align center
   .confirm
     display block
-    width 90%
-    margin 1rem auto
+    width 80%
+    margin 2.5rem auto
     background #999
     color #ccc
   .active
-    background #26a2ff
+    background #cda041
     color #fff
 </style>

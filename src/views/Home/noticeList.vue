@@ -61,28 +61,22 @@ export default {
 #noticeList
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
-    background #f5f5f5
     overflow-y scroll
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
-    @media (min-width: 1024px) {
-      width 1024px
-      left 50%
-      margin-left -512px
-    }
     .items
       margin-top 1rem
       .mint-cell-wrapper
         background-image none
       .mint-cell
         margin-top .4rem
-        color #333
-        background #fff
+        color #fff
+        background none
         border-bottom 1px solid #ddd
         .mint-cell-text
           font-size .8rem

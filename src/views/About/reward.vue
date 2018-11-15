@@ -81,16 +81,11 @@ export default {
   right 0
   bottom 0
   font-size .8rem
-  background #f5f5f5
+  // background #f5f5f5
   color #000
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
@@ -103,7 +98,8 @@ export default {
       margin .8rem 0
       padding .5rem 0
       text-align center
-      background #1b82d2
+      // background #cda041
+      box-shadow 0 0 4px 2px #cda041
       border-radius .4rem
       color #fff
       .current
@@ -120,7 +116,7 @@ export default {
       padding .5rem 0
       text-align center
       border-radius .4rem
-      background #1b82d2
+      box-shadow 0 0 4px 2px #cda041
       color #fff
       .consume, .cash
         flex 1
@@ -136,13 +132,13 @@ export default {
     .detail
       margin-top 1rem
       .title
-        color #333
+        color #cda041
         span
           display inline-block
           height 10px
           width 10px
           margin-right .5rem
-          background #1b82d2
+          background #cda041
       .items
         color #333
         .item

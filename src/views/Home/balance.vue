@@ -4,7 +4,7 @@
       <p slot="title">{{ title }}</p>
     </Header>
     <div class="container">
-      <div class="income">
+      <div class="income" :class="{active:isActive}">
         <p class="current">{{lang.lable2}}</p>
         <p class="curMoney">{{curMoney}}</p>
       </div>
@@ -37,8 +37,12 @@ export default {
       type: 0,
       items: [],
       curMoney: 0,
-      lang: {}
+      lang: {},
+      isActive: false
     }
+  },
+  created () {
+    this.isActive = false
   },
   methods: {
     getTitle () {
@@ -46,9 +50,9 @@ export default {
       if (type === 'balance') {
         this.type = 0
         if (localStorage.getItem('language') === 'en') {
-          this.title = '仙草链 balance'
+          this.title = 'GDC资产通证 balance'
         } else {
-          this.title = '仙草链余额'
+          this.title = 'GDC资产通证余额'
         }
       } else if (type === 'consume') {
         this.type = 1
@@ -58,11 +62,18 @@ export default {
           this.title = '消费积分'
         }
       } else if (type === 'cash') {
-        this.type = 2
+        this.type = 3
         if (localStorage.getItem('language') === 'en') {
           this.title = 'Cashintegral'
         } else {
           this.title = '现金积分'
+        }
+      } else if (type === 'enroll_point') {
+        this.type = 9
+        if (localStorage.getItem('language') === 'en') {
+          this.title = 'Register points'
+        } else {
+          this.title = '注册积分'
         }
       }
     },
@@ -98,6 +109,11 @@ export default {
     } else {
       this.lang = lang.cn
     }
+    setTimeout(() => {
+      this.$nextTick(function () {
+        this.isActive = true
+      })
+    }, 500)
   }
 }
 </script>
@@ -110,51 +126,71 @@ export default {
   right 0
   bottom 0
   font-size .8rem
-  background #f5f5f5
-  color #fff
+  color #ebebeb
   overflow-y scroll
   -webkit-overflow-scrolling touch
   &::-webkit-scrollbar
     display none
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .container
-    margin-top 3.2rem
+    margin-top 3.8rem
     .income
-      margin .8rem .6rem
-      padding .5rem 0
+      width 90%
+      margin 1rem auto
+      padding 1.5rem 0
       text-align center
-      background #26a2ff
+      background #0f0f0f
       border-radius .4rem
+      -webkit-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
+      -moz-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
+      -ms-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
+      -o-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
+      transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
+      transition-timing-function: ease-out;
+      -moz-transition-timing-function: ease-out; /* Firefox 4 */
+      -webkit-transition-timing-function: ease-out; /* Safari 和 Chrome */
+      -o-transition-timing-function: ease-out; /* Opera */
+      box-shadow:0 0px 0px 0 rgba(33,33,33,0);
+      transform-origin: top left;
+      transform:rotateX(-180deg) rotateY(20deg);
+      -webkit-transform:rotateX(-180deg) rotateY(20deg);
+      opacity: 0;
+      &.active
+        transform:rotateX(0deg) rotateY(0deg);
+        -webkit-transform:rotateX(0deg) rotateY(0deg);
+        opacity:1;
+        box-shadow 0px 0px 10px 2px #cda041
       .current
         font-size .8rem
       .curMoney
         font-size 1.6rem
         line-height 3rem
+        color #cda041
     .detail
       .title
         padding 0 .6rem
-        color #333
+        color #cda041
         span
           display inline-block
           height 10px
           width 10px
           margin-right .5rem
-          background #26a2ff
+          background #cda041
       .items
         color #333
         .item
-          background #fff
+          color #999
           margin-top 8px;
           padding 0 .6rem
           height 60px
           line-height 30px
-          border-top 1px solid #ddd
-          border-bottom 1px solid #ddd
+          border-top 1px solid #999
+          border-bottom 1px solid #999
           .top,.bottom
             display flex
             justify-content space-between
+          .top
+            p:nth-child(1)
+              color #cda041
+            p:nth-child(2)
+              color #CD0000
 </style>

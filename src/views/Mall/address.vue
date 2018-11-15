@@ -52,11 +52,6 @@ export default {
   bottom 0
   left 0
   right 0
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .mint-cell
     margin-top .4rem
     .mint-cell-wrapper

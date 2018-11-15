@@ -1,6 +1,6 @@
 <template>
   <div id="message">
-    <Header :showTitle="showTitle">
+    <Header :showTitle="showTitle" :showLeft="showLeft">
       <p slot="title">{{lang.title}}</p>
     </Header>
     <div class="container" ref="wrapper">
@@ -18,6 +18,7 @@ export default {
   data () {
     return {
       showTitle: true,
+      showLeft: true,
       items: [],
       lang: {}
     }
@@ -80,17 +81,14 @@ export default {
   bottom 0
   font-size .8rem
   overflow hidden
-  background #f5f5f5
   color #999
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
+    .mint-cell
+      background none
+      border-bottom 1px solid #e5d099
 </style>

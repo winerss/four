@@ -55,14 +55,8 @@ export default {
   top 0
   left 0
   right 0
-  bottom 2.6rem
+  bottom 2.8rem
   font-size .8rem
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-    padding 0
-  }
   .header
     position fixed
     display flex
@@ -70,14 +64,15 @@ export default {
     top 0
     left 0
     right 0
-    height 2.4rem
+    height 2.8rem
     padding 0 .8rem
-    line-height 2.4rem
+    line-height 3.4rem
     font-weight bold
-    background #1b82d2
+    background #111216
     color #fff
-    border-bottom 1px solid #999
-    @media (min-width: 1024px) {
+    font-size .8rem
+    border-bottom 1px solid #e5d099
+    @media (min-width 1024px) {
       width 1024px
       left 50%
       margin-left -512px
@@ -90,32 +85,35 @@ export default {
       justify-content center
       .btn-group
         height 1.4rem
-        margin-top .5rem
+        width 80%
+        margin-top .7rem
         display flex
         justify-content center
         align-items center
-        border 1px solid #26a2ff
-        border-radius .4rem
         overflow hidden
+        border 1px solid #cda041;
         font-size 0
         p
           display inline-block
-          line-height 1.4rem
+          line-height 2rem
+          width 100%
+          text-align center
           font-size .8rem
           overflow hidden
           a
             display inline-block
             width 100%
-            padding 0 .5rem
-            color #fff
+            color #cda041
           .router-link-active
-            background #26a2ff
+            background #cda041
+            color #fff
     .right
       position absolute
       right .8rem
+      line-height 2.8rem
       p
         img
-          height 1.2rem
+          height 1.4rem
           float left
-          margin .6rem .2rem 0 0
+          margin .7rem .2rem 0 0
 </style>

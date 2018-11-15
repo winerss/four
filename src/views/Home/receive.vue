@@ -4,12 +4,18 @@
       <p slot="title">{{lang.lable1}}</p>
     </Header>
     <div class="container">
+      <div class="logo">
+        <img src="../../assets/img/logo_i.png" alt="">
+      </div>
+      <div class="logo-1">
+        <img src="../../assets/img/logo_1.png" alt="">
+      </div>
       <div class="qrcode">
         <div id="qrcode"></div>
       </div>
-      <p class="copyContent">{{address}}</p>
+      <!-- <p class="copyContent">{{address}}</p>
       <p v-clipboard:copy="address"
-         v-clipboard:success="onCopy" class="copy">{{lang.lable2}}</p>
+         v-clipboard:success="onCopy" class="copy">{{lang.lable2}}</p> -->
     </div>
   </div>
 </template>
@@ -88,36 +94,46 @@ export default {
 #receive
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0
-    background #f5f5f5
     overflow-y scroll
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
-    @media (min-width: 1024px) {
-      width 1024px
-      left 50%
-      margin-left -512px
-    }
+    .logo
+      margin-top 2rem
+      text-align center
+      margin-bottom 2rem
+      img
+        height 7rem
+    .logo-1
+      margin-top 2rem
+      text-align center
+      margin-bottom 2rem
+      img
+        height 6rem
     .qrcode
-      width 50%
-      padding 2rem
+      width 45%
+      padding .4rem
       margin 1rem auto
+      border 4px solid rgba(205,160,65,0.7)
+      border-radius 1rem
       background #fff
       img
         width 100%
         margin 0 auto
+        border-radius .5rem
     .copyContent
       padding .5rem .6rem
-      background #fff
+      margin 2rem .6rem
+      background #cda041
       font-size 1rem
-      color #666
+      color #ebebeb
       line-height 1.4rem
     .copy
-      color #26a2ff
+      color #cda041
       text-align center
       font-size 1rem
       margin-top 1rem

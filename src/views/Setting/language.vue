@@ -77,14 +77,9 @@ export default {
   font-size .8rem
   background #f5f5f5
   color #000
-  @media (min-width: 1024px) {
-    width 1024px
-    left 50%
-    margin-left -512px
-  }
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     bottom 0
     left 0
     right 0

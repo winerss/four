@@ -42,10 +42,10 @@ export default {
     this.get_record()
     let lang = {
       en: {
-        lable1: 'News details'
+        lable1: 'Notice details'
       },
       cn: {
-        lable1: '新闻详情'
+        lable1: '公告详情'
       }
     }
     if (localStorage.getItem('language') === 'en') {
@@ -59,28 +59,23 @@ export default {
 
 <style lang="stylus">
 #noticeDetail
-  background #f5f5f5
   .container
     position absolute
-    top 2.4rem
+    top 2.8rem
     left 0
     right 0
     bottom 0
-    background #fff
-    @media (min-width: 1024px) {
-      width 1024px
-      left 50%
-      margin-left -512px
-    }
     h2
       margin-top 1rem
       line-height 2rem
       text-align center
+      color #cda041
     .date
-      color #999
+      color #888
       padding 0 .6rem
       text-align right
     .content
       padding .6rem
       margin-top 1rem
+      color #ebebeb
 </style>
