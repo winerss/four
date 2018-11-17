@@ -346,9 +346,13 @@ export default {
       overflow auto
       width 100%
       @media (min-width 768px) {
-        width 500px
-        left 50%
-        margin-left -250px
+        width 60%
+        height 600px
+        padding 5%
+        left 15%
+        top 10%
+        border-radius .4rem
+        box-shadow 0 0 20px 3px #666
       }
       .title
         padding 0 .8rem

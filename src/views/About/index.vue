@@ -105,8 +105,8 @@
           <mt-cell title="清除缓存" @click.native="clear">
             <img slot="icon" src="../../assets/img/dataed.png" width="24" height="24">
           </mt-cell>
+          <mt-button @click.native="clear" v-show="layoutShow" size="small" class="layout">退出</mt-button>
         </div>
-        <mt-button @click.native="clear" v-show="layoutShow" size="small" class="layout">退出</mt-button>
       </div>
     </div>
   </div>
@@ -281,6 +281,7 @@ export default {
       background-repeat: no-repeat;
       background-position: center;
       @media (min-width 768px) {
+        height 10rem
         padding 1.5rem 10%
       }
       .header
@@ -313,6 +314,11 @@ export default {
       background rgba(0,0,0,.5)
       border-radius .4rem
       margin-bottom .8rem
+      @media (min-width 768px) {
+        height 5rem
+        width 80%
+        left 10%
+      }
       .consume, .cash
         flex 1
         .title
@@ -333,11 +339,18 @@ export default {
         background #cda041
     .cell
       margin-top 4rem
-    .layout
-      display: block;
-      width: 90%;
-      max-width 300px
-      background: #00c087;
-      color: #fff;
-      margin: 2rem auto;
+      @media (min-width 768px) {
+        width 80%
+        margin 6rem auto 0
+        padding-bottom 2rem
+        border-radius .4rem
+        box-shadow 0 0 20px 3px #666
+      }
+      .layout
+        display: block;
+        width: 90%;
+        max-width 300px
+        background: #00c087;
+        color: #fff;
+        margin: 2rem auto;
 </style>
