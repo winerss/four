@@ -17,16 +17,21 @@
         </div>
         <div class="packet">
           <div class="consume" @click="goPages('/freeze/', data.ice_point)">
-            <p class="title">{{lang.label3}}</p>
+            <p class="title"><img src="../../assets/img/dongjie.png" alt="">{{lang.label3}}</p>
             <p class="money">{{data.ice_point}}</p>
           </div>
           <div class="line"></div>
           <div class="cash" @click="goPages('/release/', data.all_point + ',' + 3)">
-            <p class="title">{{lang.label4}}</p>
+            <p class="title"><img src="../../assets/img/xianjin.png" alt="">{{lang.label4}}</p>
             <p class="money">{{data.all_point}}</p>
           </div>
+          <div class="line"></div>
+          <div class="consume" @click="goPages('/release/', data.pocket_point + ',' + 10)">
+            <p class="title"><img src="../../assets/img/jiangjin.png" alt="">{{lang.label33}}</p>
+            <p class="money">{{data.pocket_point}}</p>
+          </div>
         </div>
-        <div class="packet">
+        <!-- <div class="packet">
           <div class="consume" @click="goPages('/release/', data.pocket_point + ',' + 10)">
             <p class="title">{{lang.label33}}</p>
             <p class="money">{{data.pocket_point}}</p>
@@ -36,16 +41,8 @@
             <p class="title">{{lang.label44}}</p>
             <p class="money">{{data.shop_point}}</p>
           </div>
-        </div>
-        <div class="icon-group">
-          <!-- <div class="item" @click="goPage('/myorder')">
-            <img src="../../assets/img/platform.png" alt="">
-            <p>我的交易平台</p>
-          </div>
-          <div class="item center" @click="goPage('/orderRecord')">
-            <img src="../../assets/img/record.png" alt="">
-            <p>账单记录</p>
-          </div> -->
+        </div> -->
+        <!-- <div class="icon-group" style="margin-top: 2.6rem">
           <div class="item" @click="goPage('/reward')">
             <div class="imgwrap animated bounceInLeft"><div class="img"><img src="../../assets/img/share.png" alt=""></div></div>
             <p>分享奖励</p>
@@ -82,6 +79,32 @@
             <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/about.png" alt=""></div></div>
             <p>关于</p>
           </div>
+        </div> -->
+        <div class="cell">
+          <mt-cell title="分享奖励" is-link to="/reward">
+            <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="立即提现" is-link to="/tixian">
+            <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="我的二维码" is-link to="/qrcode">
+            <img slot="icon" src="../../assets/img/qrcode.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="手机号码" is-link to="/changeTel">
+            <img slot="icon" src="../../assets/img/tel.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="修改登录密码" is-link to="/changePass/login">
+            <img slot="icon" src="../../assets/img/password.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="修改支付密码" is-link to="/changePass/pay'">
+            <img slot="icon" src="../../assets/img/payp.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="关于" is-link to="/aboutapp">
+            <img slot="icon" src="../../assets/img/about.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="清除缓存" @click.native="clear">
+            <img slot="icon" src="../../assets/img/dataed.png" width="24" height="24">
+          </mt-cell>
         </div>
         <mt-button @click.native="clear" v-show="layoutShow" size="small" class="layout">退出</mt-button>
       </div>
@@ -227,6 +250,16 @@ export default {
   overflow-x hidden
   overflow-y auto
   color #fff
+  .mint-cell
+    background none
+    border-bottom 1px solid #666
+    .mint-cell-text
+      font-size .6rem
+      color #ccc
+    .mint-cell-allow-right::after
+      // border: solid 2px #00c087
+      border-bottom-width 0
+      border-left-width 0
   .container
     position absolute
     top 2.8rem
@@ -240,99 +273,71 @@ export default {
       padding .8rem
       background #fff
     .information
-      padding 0 1.8rem 1.5rem
-      // background #111216
+      height 4rem
+      padding 2rem 1.8rem 5rem
       color #cda041
-      border-bottom 1px solid #cda041
+      background: url('../../assets/img/banner.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       @media (min-width 768px) {
         padding 1.5rem 10%
       }
       .header
-        display flex
-        justify-content space-between
-        @media (min-width 768px) {
-          padding 1.5rem 0
-        }
-        .nickName
-          line-height 2rem
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
-          font-size 1.4rem
-        .avatar
-          flex-shrink 0
-          width 4rem
-          height 4rem
-          overflow hidden
-          img
-            height 3rem
-            border-radius 100%
-            margin .5rem
+        font-size 1.4rem
       .copyContent
-        line-height 2rem
+        line-height 3rem
         overflow hidden
         text-overflow ellipsis
         white-space nowrap
       .copy
-        color #e0e0e0
+        display inline-block
+        padding 0 .4rem
+        line-height 1.4rem
+        height 1.4rem
+        font-size .6rem
+        color #fff
+        border-radius .4rem
+        background #00c087
     .packet
+      position absolute
+      width 90%
+      left 5%
+      top 9.4rem
       display flex
       height 2.4rem
-      padding .5rem 0
+      padding 1.2rem 0
       text-align center
-      // background #111216
+      box-shadow 0 0 2px 4px #333
       color #cda041
+      background rgba(0,0,0,.5)
+      border-radius .4rem
       margin-bottom .8rem
       .consume, .cash
         flex 1
         .title
           line-height 1.2rem
           color #ebebeb
+          display flex
+          color #00c087
+          justify-content center
+          img
+            height 1.2rem
+            margin-right .1rem
         .money
           line-height 1.4rem
-          font-size 1rem
+          font-size .6rem
       .line
-        width 2px
+        width 1px
         height 2.4rem
         background #cda041
-    .icon-group
-      display flex
-      padding .6rem 0
-      border-top 1px solid #cda041
-      .center
-        border-left 1px solid #cda041
-        border-right 1px solid #cda041
-      .item
-        flex 1
-        text-align center
-        color #ebebeb
-        font-size .8rem
-        line-height 2rem
-        .imgwrap
-          margin 0 auto
-          height 3rem
-          width 3rem
-          background url('../../assets/img/bubble.png')
-          background-size cover
-        img
-          height 1.6rem
-          width 1.6rem
-          margin .7rem
-    .items
-      .mint-cell-wrapper
-        background-image none
-      .mint-cell
-        color #333
-        border-bottom 1px solid #ddd
-        .mint-cell-text
-          font-size .8rem
-      .mint-cell:last-child
-        background-image none
+    .cell
+      margin-top 4rem
     .layout
       display: block;
       width: 90%;
-      max-width 200px
-      background: #cda041;
+      max-width 300px
+      background: #00c087;
       color: #fff;
       margin: 2rem auto;
 </style>

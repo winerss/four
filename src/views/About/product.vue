@@ -9,14 +9,14 @@
         <mt-tab-item v-for="item in products" :key="item.id" @click.native="picker(item.key)" :id="item.key">{{item.title}}</mt-tab-item>
       </mt-navbar>
       <div class="content">
-        <p class="title">产品信息</p>
+        <!-- <p class="title">产品信息</p> -->
         <div class="product">
           <div class="right">
             <p class="name">{{products[type - 1].title}}</p>
             <p class="coin">价格：{{products[type - 1].point}}</p>
           </div>
         </div>
-        <p class="title">收货地址</p>
+        <!-- <p class="title">收货地址</p> -->
         <div class="address">
           <mt-field label="收货人" placeholder="请输入收货人姓名" v-model='form.user'></mt-field>
           <mt-field label="联系方式" placeholder="请输入联系方式" v-model='form.tel'></mt-field>
@@ -31,7 +31,7 @@
           </div>
           <mt-field label="详细地址" placeholder="请输入详细地址信息" v-model='form.addressDetail'></mt-field>
         </div>
-        <p class="title">支付方式</p>
+        <!-- <p class="title">支付方式</p> -->
         <div class="tips">
           注册积分大于等于{{precent * 100}}%
         </div>
@@ -352,7 +352,6 @@ export default {
       }
       .title
         padding 0 .8rem
-        margin .8rem 0
         line-height 2rem
         color #ebebeb
         @media (min-width 768px) {
@@ -365,7 +364,8 @@ export default {
       }
       .product
         overflow hidden
-        padding .8rem
+        padding 0 .8rem
+        margin-top 2rem
         .left
           float left
           img
@@ -376,7 +376,6 @@ export default {
           margin-left .6rem
           .name
             font-size 1rem
-            margin-top .5rem
             color #cda041
           .coin
             font-size .6rem
@@ -399,6 +398,6 @@ export default {
         background #ddd
         max-width 200px
       .active
-        background #cda041
+        background #00c087
         color #fff
 </style>

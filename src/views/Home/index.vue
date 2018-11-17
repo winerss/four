@@ -19,7 +19,7 @@
         </div>
         <div class="integration">
           <div class="consume" @click="goDetail('/balance', 'enroll_point', data.enroll_point)">
-            <p class="title">{{lang.lable44}}</p>
+            <p class="title"><img src="../../assets/img/zhuce.png" alt="">{{lang.lable44}}</p>
             <p class="money">{{ data.enroll_point}}</p>
           </div>
           <div class="line"></div>
@@ -29,7 +29,7 @@
           </div> -->
           <div class="line"></div>
           <div class="cash" @click="goDetail('/balance', 'cash', data.all_point)">
-            <p class="title">{{lang.lable5}}</p>
+            <p class="title"><img src="../../assets/img/xianjin.png" alt="">{{lang.lable5}}</p>
             <p class="money">{{ data.all_point }}</p>
           </div>
         </div>
@@ -390,6 +390,14 @@ window.reviced = function (res) {
         width 768px
         margin 0 auto
       }
+      .title
+        display flex
+        justify-content center
+        img
+          height 1.2rem
+          float left
+          margin-right .2rem
+          margin-top .2rem
       .consume, .cash
         flex 1
         .title

@@ -129,7 +129,7 @@ export default {
       background #999
       color #ccc
     .active
-      background #cda041
+      background #00c087
       color #fff
     .bottom
       margin-top 1rem

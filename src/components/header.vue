@@ -91,7 +91,7 @@ export default {
   justify-content space-between
   text-align center
   font-size .8rem
-  border-bottom: 1px solid rgb(229, 208, 153);
+  // border-bottom: 1px solid rgb(229, 208, 153);
   @media (min-width 768px) {
     width 768px
     left 50%

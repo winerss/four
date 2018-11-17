@@ -27,7 +27,7 @@
       </router-link> -->
       <router-link to="/about">
         <div class="item item5">
-          我的
+          个人中心
         </div>
       </router-link>
     </div>
