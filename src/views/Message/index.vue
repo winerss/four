@@ -54,7 +54,7 @@ export default {
   },
   mounted () {
     this.getData()
-    this._initScroll()
+    // this._initScroll()
     let lang = {
       en: {
         title: 'Message'
@@ -80,7 +80,8 @@ export default {
   right 0
   bottom 0
   font-size .8rem
-  overflow hidden
+  overflow-x hidden
+  overflow-y auto
   color #999
   .container
     position absolute

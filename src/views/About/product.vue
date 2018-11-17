@@ -345,16 +345,24 @@ export default {
       bottom 0
       overflow auto
       width 100%
-      @media (min-width 1024px) {
-        width 900px
+      @media (min-width 768px) {
+        width 500px
         left 50%
-        margin-left -450px
-      }  
+        margin-left -250px
+      }
       .title
         padding 0 .8rem
         margin .8rem 0
         line-height 2rem
         color #ebebeb
+        @media (min-width 768px) {
+          margin .2rem 0
+        }
+      .title:nth-child(1){
+        @media (min-width 768px) {
+          margin-top 2rem
+        }
+      }
       .product
         overflow hidden
         padding .8rem
@@ -389,6 +397,7 @@ export default {
         width 80%
         margin 1rem auto
         background #ddd
+        max-width 200px
       .active
         background #cda041
         color #fff

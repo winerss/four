@@ -106,7 +106,7 @@ export default {
   mounted () {
     this.getData()
     this.getMatch()
-    this._initScroll()
+    // this._initScroll()
     let lang = {
       en: {
         label: 'Guide price',
@@ -134,12 +134,13 @@ export default {
   top 2.8rem
   width 100%
   bottom 0
-  overflow hidden
-  @media (min-width 1024px) {
-    width 900px
+  overflow-x hidden
+  overflow-y auto
+  @media (min-width 768px) {
+    width 768px
     left 50%
-    margin-left -450px
-  }  
+    margin-left -384px
+  }
   .title
     display flex
     position absolute

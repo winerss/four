@@ -179,7 +179,7 @@ export default {
     }
   },
   mounted () {
-    this._initScroll()
+    // this._initScroll()
     this.get_user_info()
     this.get_today()
     this.get_banner()
@@ -260,10 +260,10 @@ window.reviced = function (res) {
   bottom 2.8rem
   font-size .8rem
   color #000
-  @media (min-width 1024px) {
-    width 1024px
+  @media (min-width 768px) {
+    width 768px
     left 50%
-    margin-left -512px
+    margin-left -384px
   }
   header
     position: fixed;
@@ -285,10 +285,10 @@ window.reviced = function (res) {
     text-align: center;
     font-size: 0.8rem;
     border-bottom: 1px solid #e5d099;
-    @media (min-width 1024px) {
-      width 1024px
+    @media (min-width 768px) {
+      width 768px
       left 50%
-      margin-left -512px
+      margin-left -384px
     }
     .message-icon
       height 2.8rem
@@ -310,14 +310,15 @@ window.reviced = function (res) {
     bottom 0
     left 0
     right 0
-    overflow hidden
+    overflow-x hidden
+    overflow-y auto
     .wrapper
       padding-top 1rem
     .now-money
       width 90%
       margin 0 auto
       padding 1rem 0 0
-      @media (min-width 1024px) {
+      @media (min-width 768px) {
         width 80%
         margin 1rem auto
         padding 2rem 0
@@ -348,7 +349,7 @@ window.reviced = function (res) {
       .title
         font-size .8rem
         line-height 1rem
-        @media (min-width 1024px) {
+        @media (min-width 768px) {
           font-size 1rem
           line-height 2rem
         }
@@ -356,14 +357,14 @@ window.reviced = function (res) {
         font-size 1.6rem
         color #cda041
         line-height 3rem
-        @media (min-width 1024px) {
+        @media (min-width 768px) {
           font-size 1.8rem
         }
       .money2
         font-size 1rem
         color #cda041
         line-height 3rem
-        @media (min-width 1024px) {
+        @media (min-width 768px) {
           font-size 1.2rem
         }
     .center
@@ -376,7 +377,7 @@ window.reviced = function (res) {
         width 2rem
     .mint-swipe
       height 8rem
-      @media (min-width 1024px) {
+      @media (min-width 768px) {
         height 16rem
       }
     .integration
@@ -385,8 +386,8 @@ window.reviced = function (res) {
       padding .8rem 0
       text-align center
       color #cda041
-      @media (min-width 1024px) {
-        width 80%
+      @media (min-width 768px) {
+        width 768px
         margin 0 auto
       }
       .consume, .cash

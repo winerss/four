@@ -276,7 +276,7 @@ export default {
       this.allPrice += parseFloat(element.num) * parseFloat(element.price)
     })
     this.getArea()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -288,6 +288,8 @@ export default {
   bottom 0
   left 0.6rem
   right 0.6rem
+  overflow-x hidden
+  overflow-y auto
   .address-picker
     display flex
   .picker
@@ -357,6 +359,11 @@ export default {
     color #fff
     font-size .8rem
     font-weight bold
+    @media (min-width 768px) {
+      width 768px
+      left 50%
+      margin-left -384px
+    }
     p
       flex 1
     .buy

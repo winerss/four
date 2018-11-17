@@ -116,7 +116,7 @@ export default {
   mounted () {
     // this.get_product()
     this.get_shop()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -128,6 +128,8 @@ export default {
   bottom 0
   left 0
   right 0
+  overflow-x hidden
+  overflow-y auto
   .item
     float left
     width 44%
@@ -136,11 +138,19 @@ export default {
     border-radius 6px
     overflow hidden
     box-shadow 0px 0px 5px 2px #cda041
+    @media (min-width 768px) {
+      width 30%
+      margin-top 2rem
+      margin-left 2.5%
+    }
     .banner
       height 7rem
       background-size cover
       background-repeat no-repeat
       background-position center
+      @media (min-width 768px) {
+        height 12rem
+      }
     h4
       color #999
       padding 0 .4rem

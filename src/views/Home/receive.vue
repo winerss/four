@@ -121,6 +121,10 @@ export default {
       border 4px solid rgba(205,160,65,0.7)
       border-radius 1rem
       background #fff
+      @media (min-width 768px) {
+        width 30%
+        margin 6rem auto
+      }
       img
         width 100%
         margin 0 auto

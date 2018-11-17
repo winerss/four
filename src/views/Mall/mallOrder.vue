@@ -61,7 +61,7 @@ export default {
   },
   mounted () {
     this.getData()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -73,6 +73,8 @@ export default {
   bottom 0
   left 0
   right 0
+  overflow-x hidden
+  overflow-y auto
   .container
     position absolute
     top 2.8rem

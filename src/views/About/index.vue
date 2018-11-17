@@ -170,7 +170,7 @@ export default {
   mounted () {
     this.get_user_info()
     this.getAddress()
-    this._initScroll()
+    // this._initScroll()
     let lang = {
       en: {
         title: 'Me',
@@ -224,7 +224,8 @@ export default {
   right 0
   bottom 2.8rem
   font-size .8rem
-  overflow hidden
+  overflow-x hidden
+  overflow-y auto
   color #fff
   .container
     position absolute
@@ -243,12 +244,15 @@ export default {
       // background #111216
       color #cda041
       border-bottom 1px solid #cda041
-      @media (min-width 1024px) {
+      @media (min-width 768px) {
         padding 1.5rem 10%
-      }  
+      }
       .header
         display flex
         justify-content space-between
+        @media (min-width 768px) {
+          padding 1.5rem 0
+        }
         .nickName
           line-height 2rem
           overflow hidden
@@ -327,6 +331,7 @@ export default {
     .layout
       display: block;
       width: 90%;
+      max-width 200px
       background: #cda041;
       color: #fff;
       margin: 2rem auto;

@@ -59,10 +59,10 @@ export default {
     display flex
     line-height 4.2rem
     font-size .8rem
-    @media (min-width 1024px) {
-      width 1024px
+    @media (min-width 768px) {
+      width 768px
       left 50%
-      margin-left -512px
+      margin-left -384px
     }
     a
       display block

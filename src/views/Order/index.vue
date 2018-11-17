@@ -72,15 +72,15 @@ export default {
     color #fff
     font-size .8rem
     border-bottom 1px solid #e5d099
-    @media (min-width 1024px) {
-      width 1024px
+    @media (min-width 768px) {
+      width 768px
       left 50%
-      margin-left -512px
+      margin-left -384px
       padding 0
     }
     .center
       width 60%
-      @media (min-width 1024px) {
+      @media (min-width 768px) {
         width 30%
       }
       margin 0 auto

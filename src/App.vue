@@ -19,9 +19,22 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  @media (min-width 1024px) {
-    width 1024px
+  @media (min-width 768px) {
+    width 768px
     left 50%
-    margin-left -512px
+    margin-left -384px
+  }
+  .v-modal{
+    @media (min-width 768px) {
+      width 768px
+      left 50%
+      margin-left -384px
+    }
+  }
+  .mint-popup{
+    @media (min-width 768px) {
+      width 768px !important
+      left 50%
+    }
   }
 </style>

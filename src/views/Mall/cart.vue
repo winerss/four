@@ -171,7 +171,7 @@ export default {
   },
   mounted () {
     this.getData()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -184,6 +184,8 @@ export default {
   left 0
   right 0
   color #666
+  overflow-x hidden
+  overflow-y auto
   .container
     position absolute
     top 2.8rem
@@ -262,6 +264,11 @@ export default {
     height 4.7rem
     bottom 0
     width 100%
+    @media (min-width 768px) {
+      width 768px
+      left 50%
+      margin-left -384px
+    }
     .total
       padding 0 .6rem
       height 1.6rem

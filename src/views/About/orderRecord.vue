@@ -82,6 +82,11 @@ export default {
       padding 1rem 0
       background #0f0f0f
       font-size 0
+      @media (min-width 768px) {
+        width 768px
+        left 50%
+        margin-left -384px
+      }
       button
         width 30%
         margin-left 2.6%

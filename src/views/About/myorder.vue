@@ -172,7 +172,7 @@ export default {
   },
   mounted () {
     this.getdata()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -186,6 +186,8 @@ export default {
   bottom ０
   font-size .8rem
   color #999
+  overflow-x hidden
+  overflow-y auto
   .mint-popup-bottom
     width 100%
   .mint-cell

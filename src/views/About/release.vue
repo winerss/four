@@ -125,6 +125,11 @@ export default {
       transform:rotateX(-180deg) rotateY(20deg);
       -webkit-transform:rotateX(-180deg) rotateY(20deg);
       opacity: 0;
+      @media (min-width 768px) {
+        width 80%
+        margin 1rem auto
+        padding 2rem 0
+      }
       &.active
         transform:rotateX(0deg) rotateY(0deg);
         -webkit-transform:rotateX(0deg) rotateY(0deg);

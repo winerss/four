@@ -169,10 +169,10 @@ export default {
   right .6rem
   bottom 0
   overflow-y: scroll
-  @media (min-width 1024px) {
-    width 1024px
+  @media (min-width 768px) {
+    width 500px
     left 50%
-    margin-left -512px
+    margin-left -250px
   }
   .mint-radio-input:checked + .mint-radio-core
     background-color rgb(205,160,65)
@@ -194,6 +194,9 @@ export default {
   .mint-radiolist
     .mint-radiolist-title
       margin 0
+    @media (min-width 768px) {
+      margin-top 2rem
+    }
   .mint-cell
     border-bottom 1px solid #999
     background none
@@ -220,16 +223,25 @@ export default {
     display flex
     justify-content space-between
     padding 0 .6rem
-    background: #cda041;
-    color: #ebebeb;
     p
       height 26px
       line-height 26px
       flex 1
-      color #fff
+      color #cda041
+    p:nth-child(1){
+      @media (min-width 768px) {
+        text-align left
+      }
+    }
+    p:nth-child(2){
+      @media (min-width 768px) {
+        text-align right
+      }
+    }
   .confirm
     display block
     width 90%
+    max-width 200px
     margin 1rem auto
     background #999
     color #ccc

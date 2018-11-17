@@ -106,7 +106,7 @@ export default {
   mounted () {
     this.id = this.$route.params.id
     this.getData()
-    this._initScroll()
+    // this._initScroll()
   }
 }
 </script>
@@ -118,6 +118,8 @@ export default {
   bottom 0
   left 0
   right 0
+  overflow-x hidden
+  overflow-y auto
   .container
     position absolute
     top 2.8rem
@@ -130,11 +132,17 @@ export default {
         background-size cover
         background-repeat no-repeat
         background-position center
+        @media (min-width 768px) {
+          height 20rem
+        }
       h4
         color #cda041
         padding 0 .4rem
         line-height 1.6rem
         font-size 1rem
+        @media (min-width 768px) {
+          margin-top 1rem
+        }
       .bottom
         display flex
         justify-content space-between
@@ -190,6 +198,11 @@ export default {
     text-align center
     line-height 2.6rem
     color #fff
+    @media (min-width 768px) {
+      width 768px
+      left 50%
+      margin-left -384px
+    }
     p
       flex 1
     .buy

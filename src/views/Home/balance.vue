@@ -137,7 +137,7 @@ export default {
       width 90%
       margin 1rem auto
       padding 1.5rem 0
-      @media (min-width 1024px) {
+      @media (min-width 768px) {
         width 80%
         margin 1rem auto
         padding 2rem 0
@@ -166,7 +166,7 @@ export default {
         box-shadow 0px 0px 10px 2px #cda041
       .current
         font-size .8rem
-        @media (min-width 1024px) {
+        @media (min-width 768px) {
           font-size 1rem
           line-height 2rem
         }
@@ -174,7 +174,7 @@ export default {
         font-size 1.6rem
         line-height 3rem
         color #cda041
-        @media (min-width 1024px) {
+        @media (min-width 768px) {
           font-size 1.2rem
         }
     .detail

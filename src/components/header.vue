@@ -92,10 +92,10 @@ export default {
   text-align center
   font-size .8rem
   border-bottom: 1px solid rgb(229, 208, 153);
-  @media (min-width 1024px) {
-    width 1024px
+  @media (min-width 768px) {
+    width 768px
     left 50%
-    margin-left -512px
+    margin-left -384px
   }
   .center
     position absolute

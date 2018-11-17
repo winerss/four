@@ -63,6 +63,7 @@ export default {
         display inline-block
         height 2.3rem
         width 80%
+        max-width: 80px;
         color #ebebeb
       .router-link-active
         color #cda041
