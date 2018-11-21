@@ -2,7 +2,7 @@
   <div id="login">
     <Header :showRight="showRight">
       <p slot="title">登录</p>
-      <p slot="right" @click="goPages('/language')">语言</p>
+      <!-- <p slot="right" @click="goPages('/language')">语言</p> -->
     </Header>
     <div class="container">
       <div class="logo">
@@ -86,6 +86,15 @@ export default {
     background-color:transparent;
     background-image: none;
     transition: background-color 50000s ease-in-out 0s;
+  @media (min-width 768px) {
+    width 60%
+    height 400px
+    padding 8% 5%
+    left 15%
+    top 20%
+    border-radius .4rem
+    box-shadow 0 0 20px 3px #666
+  }
   input
     background-color:transparent;
   .container
@@ -125,6 +134,7 @@ export default {
     .confirm
       display block
       width 80%
+      max-width 300px
       margin 2.5rem auto
       background #999
       color #ccc

@@ -83,6 +83,7 @@ export default {
     button
       display block
       width 90%;
+      max-width 300px
       margin 1rem auto
     .active
       background #00c087

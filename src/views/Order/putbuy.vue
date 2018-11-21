@@ -245,7 +245,7 @@ export default {
   .confirm
     display block
     width 80%
-    max-width 200px
+    max-width 300px
     margin 1rem auto
     background #999
     color #ccc

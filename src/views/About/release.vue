@@ -39,7 +39,7 @@ export default {
       items: [],
       curMoney: 0,
       isActive: false,
-      type: 0,
+      type: 3,
       title: ''
     }
   },
@@ -64,15 +64,7 @@ export default {
     Header
   },
   mounted () {
-    this.curMoney = this.$route.params.id.split(',')[0]
-    this.type = this.$route.params.id.split(',')[1]
-    if (this.type === '3') {
-      this.title = '现金钱包'
-    } else if (this.type === '10') {
-      this.title = '奖金钱包'
-    } else if (this.type === '11') {
-      this.title = '购物钱包'
-    }
+    this.curMoney = this.$route.params.id
     this.getData()
     setTimeout(() => {
       this.$nextTick(function () {

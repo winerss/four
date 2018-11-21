@@ -125,9 +125,16 @@ export default {
 <style lang="stylus">
 #password
   padding 0 .6rem
+  @media (min-width 768px) {
+    width 60%
+    height 400px
+    padding 8% 5%
+    margin 20% auto
+    border-radius .4rem
+    box-shadow 0 0 20px 3px #666
+  }
   .telphone
-    border-top 1px solid #ddd
-    margin-top 2.8rem
+    margin-top 5rem
   .share
     .mint-cell-wrapper
       .mint-cell-title
@@ -171,6 +178,7 @@ export default {
   .confirm
     display block
     width 80%
+    max-width 300px
     margin 2.5rem auto
     background #999
     color #ccc

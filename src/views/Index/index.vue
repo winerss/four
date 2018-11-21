@@ -6,11 +6,11 @@
           首页
         </div>
       </router-link>
-      <router-link to="/order">
+      <!-- <router-link to="/order">
         <div class="item item2">
           交易
         </div>
-      </router-link>
+      </router-link> -->
       <!-- <router-link to="/message">
         <div class="item item3">
         </div>

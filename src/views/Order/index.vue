@@ -7,9 +7,9 @@
           <p><router-link to="/order/buyOrder">{{lang.label2}}</router-link></p>
         </div>
       </div>
-      <div class="right">
+      <!-- <div class="right">
         <p @click="goDetail"><img src="../../assets/img/edit.png" alt=""> {{lang.label3}}</p>
-      </div>
+      </div> -->
     </div>
     <router-view></router-view>
   </div>

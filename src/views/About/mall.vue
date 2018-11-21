@@ -326,6 +326,7 @@ export default {
       .confirm
         display block
         width 90%
+        max-width 300px
         margin 1rem auto
         background #ddd
       .active

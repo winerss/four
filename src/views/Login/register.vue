@@ -14,17 +14,17 @@
       <p v-show="codeSta" @click="getCode" style="font-size: 0.8rem;color:#cda041;">获取验证码</p>
       <mt-button v-show="!codeSta" style="font-size: 0.6rem;" size="small" type="primary">{{time + ' 秒后获取'}}</mt-button>
     </mt-cell> -->
-    <p class="price">用户名和推荐人输入后将不能更改，请仔细和对</p>
+    <!-- <p class="price">用户名和推荐人输入后将不能更改，请仔细和对</p> -->
     <mt-field label="用户名" placeholder="请输入用户名"  v-model="form.name"></mt-field>
     <mt-field label="推荐人" placeholder="请输入推荐人用户名" v-model="form.oName"></mt-field>
-    <div class="jiedian">
+    <!-- <div class="jiedian">
       <mt-field label="节点人" placeholder="请输入节点人名称" v-model="form.jd_user"></mt-field>
       <select v-model="side">
         <option value="1">左</option>
         <option value="2">右</option>
       </select>
-    </div>
-    <p class="price">设置登录密码和交易密码</p>
+    </div> -->
+    <!-- <p class="price">设置登录密码和交易密码</p> -->
     <mt-field label="登录密码" type="password" placeholder="请输入密码" v-model="form.password"></mt-field>
     <mt-field label="交易密码" type="password" placeholder="请输入交易密码" v-model="form.ppassword"></mt-field>
     <mt-button :class="{ active: isActive }" @click.native="register" class="confirm" size="small" type="default">立即注册</mt-button>
@@ -44,11 +44,11 @@ export default {
         code: '',
         name: '',
         oName: '',
-        jd_user: '',
+        // jd_user: '',
         password: '',
         ppassword: ''
       },
-      side: 1,
+      // side: 1,
       showLeft: true,
       showTitle: true,
       isActive: false
@@ -57,7 +57,7 @@ export default {
   watch: {
     form: {
       handler (newValue, oldValue) {
-        if (oldValue.tel && oldValue.name && oldValue.oName && oldValue.jd_user && oldValue.password && oldValue.ppassword) {
+        if (oldValue.tel && oldValue.name && oldValue.oName && oldValue.password && oldValue.ppassword) {
           this.isActive = true
         } else {
           this.isActive = false
@@ -133,14 +133,14 @@ export default {
         })
         return false
       }
-      if (this.form.jd_user.length < 2) {
-        this.$toast({
-          message: '节点人长度大于两位',
-          position: 'bottom',
-          duration: 1000
-        })
-        return false
-      }
+      // if (this.form.jd_user.length < 2) {
+      //   this.$toast({
+      //     message: '节点人长度大于两位',
+      //     position: 'bottom',
+      //     duration: 1000
+      //   })
+      //   return false
+      // }
       if (this.form.ppassword.length < 6 || this.form.ppassword.length > 15) {
         this.$toast({
           message: '交易密码长度不正确',
@@ -163,8 +163,8 @@ export default {
       params.append('password', this.form.password)
       params.append('erji', this.form.ppassword)
       params.append('leader_user', this.form.oName)
-      params.append('jd_user', this.form.jd_user)
-      params.append('side', this.side)
+      // params.append('jd_user', this.form.jd_user)
+      // params.append('side', this.side)
       // params.append('code', this.form.code)
       params.append('tel', this.form.tel)
       this.axios.post(process.env.API_ROOT + '/api/login/zhuce', params).then((res) => {
@@ -200,9 +200,20 @@ export default {
   bottom 0
   left .6rem
   right .6rem
+  @media (min-width 768px) {
+    width 60%
+    height 400px
+    padding 8% 5%
+    left 15%
+    top 20%
+    border-radius .4rem
+    box-shadow 0 0 20px 3px #666
+  }
   .telphone
-    border-top 1px solid #ddd
-    margin-top 2.8rem
+    margin-top 5rem
+    @media (min-width 768px) {
+      margin-top 1rem
+    }
   .mint-cell
     border-bottom 1px solid #999
     background none
@@ -231,6 +242,7 @@ export default {
     color #ebebeb
   .jiedian
     overflow hidden
+    border-bottom: 1px solid #999;
     .mint-cell
       float left
       width 70%
@@ -242,7 +254,7 @@ export default {
       margin-top 10px
       background rgba(0,0,0,.4)
       color #cda041
-      border-color #cda041
+      border-color #999
       outline none
       option
         background #333
@@ -259,6 +271,7 @@ export default {
   .confirm
     display block
     width 80%
+    max-width 300px
     margin 2.5rem auto
     background #999
     color #ccc

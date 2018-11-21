@@ -5,9 +5,9 @@
       <router-link class="message-icon" slot="right" to="/message"><img src="../../assets/img/message.png" alt=""></router-link>
     </Header> -->
     <header>
-      <router-link class="message-icon" to="/message"><img src="../../assets/img/message.png" alt=""></router-link>
-      <p>GDC</p>
-      <div @click="H5toNativeUrl" class="scan"><img src="../../assets/img/scan.png" alt=""></div>
+      <!-- <router-link class="message-icon" ><img src="../../assets/img/message.png" alt=""></router-link> -->
+      GDC
+      <!-- <div  class="scan"></div> -->
     </header>
     <div class="container" ref="wrapper">
       <div class="wrapper">
@@ -23,12 +23,8 @@
             <p class="money">{{ data.enroll_point}}</p>
           </div>
           <div class="line"></div>
-          <!-- <div class="consume" @click="goDetail('/balance', 'consume', data.zhu_point)">
-            <p class="title">{{lang.lable4}}</p>
-            <p class="money">{{ data.zhu_point}}</p>
-          </div> -->
           <div class="line"></div>
-          <div class="cash" @click="goDetail('/balance', 'cash', data.all_point)">
+          <div class="cash" @click="goPages('/release/', data.all_point)">
             <p class="title"><img src="../../assets/img/xianjin.png" alt="">{{lang.lable5}}</p>
             <p class="money">{{ data.all_point }}</p>
           </div>
@@ -43,9 +39,9 @@
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/plane.png" alt=""></div></div>
             <p class="title">{{lang.lable6}}</p>
           </div>
-          <div class="middle" @click="goDetail('/myorder')">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/platform.png" alt=""></div></div>
-            <p class="title">我的交易平台</p>
+         <div class="middle" @click="goDetail('/orderRecord')">
+            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/record.png" alt=""></div></div>
+            <p class="title">账单记录</p>
           </div>
           <div class="right" @click="goDetail('/receive')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/plane1.png" alt=""></div></div>
@@ -53,45 +49,17 @@
           </div>
         </div>
         <div class="operation">
-          <div class="left" @click="goDetail('/mall')">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/mall.png" alt=""></div></div>
-            <p class="title">复消商城</p>
+          <div class="left" @click="goDetail('/qrcode')">
+            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/qrcode.png" alt=""></div></div>
+            <p class="title">我的二维码</p>
           </div>
-          <div class="middle" @click="goDetail('/orderRecord')">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/record.png" alt=""></div></div>
-            <p class="title">账单记录</p>
+         <div class="middle" @click="goDetail('/tixian')">
+            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/tixian.png" alt=""></div></div>
+            <p class="title">立即提现</p>
           </div>
-          <div class="right" @click="goDetail('/noticeList')">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/notice.png" alt=""></div></div>
-            <p class="title">公告</p>
-          </div>
-        </div>
-        <div class="operation">
-          <div class="left" @click="tips">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/zhibo.png" alt=""></div></div>
-            <p class="title">直播间</p>
-          </div>
-          <div class="middle" @click="tips">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/jingcai.png" alt=""></div></div>
-            <p class="title">体育竞猜</p>
-          </div>
-          <div class="right" @click="tips">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/jingji.png" alt=""></div></div>
-            <p class="title">竞技游戏</p>
-          </div>
-        </div>
-        <div class="operation">
-          <div class="left" @click="tips">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/yiliao.png" alt=""></div></div>
-            <p class="title">医疗咨询</p>
-          </div>
-          <div class="middle" @click="tips">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/huafei.png" alt=""></div></div>
-            <p class="title">话费充值</p>
-          </div>
-          <div class="right" @click="tips">
+          <div class="right" @click="goDetail('/message')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/zixun.png" alt=""></div></div>
-            <p class="title">新闻资讯</p>
+            <p class="title">消息</p>
           </div>
         </div>
       </div>
@@ -161,6 +129,9 @@ export default {
         this.$router.push(path)
       }
     },
+    goPages (path, type) {
+      this.$router.push(path + type)
+    },
     get_today () {
       var params = new FormData()
       params.append('sid', localStorage.getItem('sid'))
@@ -209,7 +180,7 @@ export default {
         lable3: '昨日收益',
         lable4: '消费积分',
         lable44: '注册积分',
-        lable5: '现金积分',
+        lable5: '收益钱包',
         lable6: '转出',
         lable7: '扫描',
         lable8: '转入',
@@ -267,10 +238,11 @@ window.reviced = function (res) {
   }
   header
     position: fixed;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: flex;
     z-index: 2;
+    text-align center
     top: 0;
     left: 0;
     right: 0;
@@ -419,6 +391,7 @@ window.reviced = function (res) {
       display flex
       padding .8rem 0
       border-top 1px solid #cda041
+      border-bottom 1px solid #cda041
       .left,.middle,.right
         flex 1
         text-align center

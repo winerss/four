@@ -2,94 +2,27 @@
   <div id="about">
     <Header :showTitle="showTitle" :showRight="showRight">
       <p slot="title">{{lang.title}}</p>
-      <!-- <p slot="right" @click="goPage('/setting')">{{lang.label}}</p> -->
     </Header>
     <div class="container" ref="wrapper">
       <div class="wrapper">
         <div class="information">
           <div class="header">
             <div class="nickName">{{data.nickname}}</div>
-            <!-- <div class="avatar"><img src="../../assets/img/logo.jpg" alt=""></div> -->
           </div>
           <p class="copyContent">{{address}}</p>
           <p  v-clipboard:copy="address"
               v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p>
         </div>
-        <div class="packet">
-          <div class="consume" @click="goPages('/freeze/', data.ice_point)">
-            <p class="title"><img src="../../assets/img/dongjie.png" alt="">{{lang.label3}}</p>
-            <p class="money">{{data.ice_point}}</p>
-          </div>
-          <div class="line"></div>
-          <div class="cash" @click="goPages('/release/', data.all_point + ',' + 3)">
-            <p class="title"><img src="../../assets/img/xianjin.png" alt="">{{lang.label4}}</p>
-            <p class="money">{{data.all_point}}</p>
-          </div>
-          <div class="line"></div>
-          <div class="consume" @click="goPages('/release/', data.pocket_point + ',' + 10)">
-            <p class="title"><img src="../../assets/img/jiangjin.png" alt="">{{lang.label33}}</p>
-            <p class="money">{{data.pocket_point}}</p>
-          </div>
-        </div>
-        <!-- <div class="packet">
-          <div class="consume" @click="goPages('/release/', data.pocket_point + ',' + 10)">
-            <p class="title">{{lang.label33}}</p>
-            <p class="money">{{data.pocket_point}}</p>
-          </div>
-          <div class="line"></div>
-          <div class="cash" @click="goPages('/release/', data.shop_point + ',' + 11)">
-            <p class="title">{{lang.label44}}</p>
-            <p class="money">{{data.shop_point}}</p>
-          </div>
-        </div> -->
-        <!-- <div class="icon-group" style="margin-top: 2.6rem">
-          <div class="item" @click="goPage('/reward')">
-            <div class="imgwrap animated bounceInLeft"><div class="img"><img src="../../assets/img/share.png" alt=""></div></div>
-            <p>分享奖励</p>
-          </div>
-          <div class="item" @click="goPage('/tixian')">
-            <div class="imgwrap animated bounceInRight"><div class="img"><img src="../../assets/img/tixian.png" alt=""></div></div>
-            <p>立即提现</p>
-          </div>
-        </div>
-        <div class="icon-group">
-          <div class="item" @click="goPage('/qrcode')">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/qrcode.png" alt=""></div></div>
-            <p>我的二维码</p>
-          </div>
-          <div class="item center" @click="goPage('/changeTel')">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/tel.png" alt=""></div></div>
-            <p>手机号码</p>
-          </div>
-          <div class="item" @click="goPage('/changePass/login')">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/password.png" alt=""></div></div>
-            <p>修改登录密码</p>
-          </div>
-        </div>
-        <div class="icon-group">
-          <div class="item" @click="goPage('/changePass/pay')">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/payp.png" alt=""></div></div>
-            <p>修改支付密码</p>
-          </div>
-          <div class="item center"  @click="clear">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/dataed.png" alt=""></div></div>
-            <p>清除缓存</p>
-          </div>
-          <div class="item" @click="goPage('/aboutapp')">
-            <div class="imgwrap animated bounce"><div class="img"><img src="../../assets/img/about.png" alt=""></div></div>
-            <p>关于</p>
-          </div>
-        </div> -->
         <div class="cell">
           <mt-cell title="分享奖励" is-link to="/reward">
             <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
           </mt-cell>
-          <mt-cell title="立即提现" is-link to="/tixian">
+          <!-- <mt-cell title="立即提现" is-link to="/tixian">
             <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
-          </mt-cell>
-          <mt-cell title="我的二维码" is-link to="/qrcode">
+          </mt-cell> -->
+          <!-- <mt-cell title="我的二维码" is-link to="/qrcode">
             <img slot="icon" src="../../assets/img/qrcode.png" width="24" height="24">
-          </mt-cell>
+          </mt-cell> -->
           <mt-cell title="手机号码" is-link to="/changeTel">
             <img slot="icon" src="../../assets/img/tel.png" width="24" height="24">
           </mt-cell>
@@ -338,10 +271,10 @@ export default {
         height 2.4rem
         background #cda041
     .cell
-      margin-top 4rem
+      margin-top 1rem
       @media (min-width 768px) {
         width 80%
-        margin 6rem auto 0
+        margin 4rem auto 0
         padding-bottom 2rem
         border-radius .4rem
         box-shadow 0 0 20px 3px #666
