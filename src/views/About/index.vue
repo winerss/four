@@ -14,9 +14,9 @@
               v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p>
         </div>
         <div class="cell">
-          <mt-cell title="分享奖励" is-link to="/reward">
+          <!-- <mt-cell title="分享奖励" is-link to="/reward">
             <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
-          </mt-cell>
+          </mt-cell> -->
           <!-- <mt-cell title="立即提现" is-link to="/tixian">
             <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
           </mt-cell> -->

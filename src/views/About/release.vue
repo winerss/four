@@ -155,6 +155,7 @@ export default {
           .top,.bottom
             display flex
             justify-content space-between
+            color #999
           .top
             p:nth-child(1)
               color #cda041

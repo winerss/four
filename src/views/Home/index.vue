@@ -6,7 +6,7 @@
     </Header> -->
     <header>
       <!-- <router-link class="message-icon" ><img src="../../assets/img/message.png" alt=""></router-link> -->
-      GDC
+      结算系统
       <!-- <div  class="scan"></div> -->
     </header>
     <div class="container" ref="wrapper">
@@ -175,7 +175,7 @@ export default {
         lable16: 'I have bottom line'
       },
       cn: {
-        lable1: 'GDC资产通证',
+        lable1: '结算系统资产通证',
         lable2: '当前收益',
         lable3: '昨日收益',
         lable4: '消费积分',

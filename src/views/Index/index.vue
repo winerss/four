@@ -20,11 +20,11 @@
           产品
         </div>
       </router-link>
-      <!-- <router-link to="/mall">
+      <router-link to="/productOrder">
         <div class="item item4">
-          商城
+          订单
         </div>
-      </router-link> -->
+      </router-link>
       <router-link to="/about">
         <div class="item item5">
           个人中心
@@ -88,7 +88,7 @@ export default {
         background-position 50% .1rem
         background-size 1.4rem auto
       .item4
-        background url('../../assets/img/mall.png')
+        background url('../../assets/img/order.png')
         background-repeat no-repeat
         background-position 50% .2rem
         background-size 1.4rem auto
@@ -115,7 +115,7 @@ export default {
         background-position 50% .1rem
         background-size 1.4rem auto
       .item4
-        background url('../../assets/img/mall_fill.png')
+        background url('../../assets/img/order_fill.png')
         background-repeat no-repeat
         background-position 50% .2rem
         background-size 1.4rem auto

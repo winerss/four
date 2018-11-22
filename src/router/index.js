@@ -76,7 +76,7 @@ export default new Router({
         name: 'home',
         component: home,
         meta: {
-          title: 'GDC资产通证'
+          title: '结算系统'
         }
       }, {
         path: '/order',
@@ -159,7 +159,7 @@ export default new Router({
       name: 'balance',
       component: balance,
       meta: {
-        title: 'GDC资产通证余额'
+        title: '结算系统资产通证余额'
       }
     }, {
       path: '/transfer',
