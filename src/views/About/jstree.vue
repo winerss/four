@@ -17,33 +17,24 @@ export default {
     return {
       showLeft: true,
       showTitle: true,
-      data: [
-        {
+      data: [{
           "text": "root",
           "selected": "true",
-          "children": [
-            {
-              "text": "A00001",
-              "children": [
-                {
-                  "text": "A00002",
-                  "children": [
-                    {
-                      "text": "A00003"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
+          "children": [{
+            "text": "A00001",
+            "children": [{
+              "text": "A00002",
+              "children": [{
+                  "text": "A00003"
+                }]
+              }]
+            }, {
               "text": "B00001"
-            },
-            {
+            }, {
               "text": "C00001"
-            },
-            {
+            }, {
               "text": "D00001"
-            },
+            }
           ]
         }
       ]

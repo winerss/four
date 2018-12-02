@@ -5,18 +5,18 @@
     </Header>
     <div class="container" ref="wrapper">
       <div class="wrapper">
-        <!-- <div class="information">
+        <div class="information">
           <div class="header">
-            <div class="nickName">{{data.nickname}}</div>
+            <div class="nickName"><img src="../../assets/img/avatar.png" alt="">{{data.nickname}}</div>
           </div>
-          <p class="copyContent">{{address}}</p>
+          <!-- <p class="copyContent">{{address}}</p>
           <p  v-clipboard:copy="address"
-              v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p>
-        </div> -->
+              v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p> -->
+        </div>
         <div class="cell">
-          <!-- <mt-cell title="我的分享" is-link to="/jstree">
+          <mt-cell title="我的分享" is-link to="/jstree">
             <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
-          </mt-cell> -->
+          </mt-cell>
           <mt-cell title="我的钱包" is-link @click.native="goPages('/release/', data.all_point)">
             <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
             {{data.all_point}}
@@ -211,9 +211,9 @@ export default {
       padding .8rem
       background #fff
     .information
-      height 4rem
-      padding 2rem 1.8rem 5rem
-      color #cda041
+      height 8rem
+      // padding 2rem 1.8rem 5rem
+      color #999
       background: url('../../assets/img/banner.jpg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -222,8 +222,25 @@ export default {
         height 10rem
         padding 1.5rem 10%
       }
+      overflow hidden
       .header
+        height 4rem
+        width 4rem
+        margin 1rem auto
         font-size 1.4rem
+        text-align center
+        border-radius 50%
+        @media (min-width 768px) {
+          height 6rem
+          width 6rem
+        }
+        img
+          height 4rem
+          width 4rem
+          @media (min-width 768px) {
+            height 6rem
+            width 6rem
+          }
       .copyContent
         line-height 3rem
         overflow hidden
