@@ -37,6 +37,8 @@ const avatar = resolve => require(['@/views/About/avatar'], resolve)
 const convert = resolve => require(['@/views/About/convert'], resolve)
 const productOrder = resolve => require(['@/views/Mall/productOrder'], resolve)
 const tixian = resolve => require(['@/views/About/tixian'], resolve)
+const jstree = resolve => require(['@/views/About/jstree'], resolve)
+
 // 设置
 const setting = resolve => require(['@/views/Setting'], resolve)
 
@@ -79,6 +81,10 @@ export default new Router({
           title: '结算系统'
         }
       }, {
+        path: '/product',
+        name: 'product',
+        component: product
+      }, {
         path: '/order',
         redirect: '/order/saleOrder',
         component: order,
@@ -92,12 +98,94 @@ export default new Router({
           component: saleOrder
         }]
       }, {
+        path: '/productOrder',
+        name: 'productOrder',
+        component: productOrder
+      }, {
         path: '/about',
         name: 'about',
         component: about,
         meta: {
           title: '我的'
         }
+      }, {
+        path: '/balance/:type',
+        name: 'balance',
+        component: balance,
+        meta: {
+          title: '结算系统资产通证余额'
+        }
+      }, {
+        path: '/release/:id',
+        name: 'release',
+        component: release
+      }, {
+        path: '/transfer',
+        name: 'transfer',
+        component: transfer,
+        meta: {
+          title: '发送'
+        }
+      }, {
+        path: '/orderRecord',
+        name: 'orderRecord',
+        component: orderRecord
+      }, {
+        path: '/receive',
+        name: 'receive',
+        component: receive,
+        meta: {
+          title: '接收'
+        }
+      }, {
+        path: '/qrcode',
+        name: 'qrcode',
+        component: qrcode
+      }, {
+        path: '/tixian',
+        name: 'tixian',
+        component: tixian
+      }, {
+        path: '/noticeList',
+        name: 'noticeList',
+        component: noticeList,
+        meta: {
+          title: '公告'
+        }
+      },
+      // 更改手机号
+      {
+        path: '/changeTel',
+        name: 'changeTel',
+        component: changeTel
+      }, {
+        path: '/changeTel/set',
+        name: 'set',
+        component: set
+      }, // 设置密码
+      {
+        path: '/changePass/:type',
+        name: 'changePass',
+        component: changePass
+      }, {
+        path: '/changePass/setpass/:type',
+        name: 'setpass',
+        component: setpass
+      },
+      {
+        path: '/language',
+        name: 'language',
+        component: language
+      },
+      {
+        path: '/aboutapp',
+        name: 'aboutApp',
+        component: aboutApp
+      },
+      {
+        path: '/jstree',
+        name: 'jstree',
+        component: jstree
       }]
     },
     // 商城
@@ -155,34 +243,6 @@ export default new Router({
         title: '消息'
       }
     }, {
-      path: '/balance/:type',
-      name: 'balance',
-      component: balance,
-      meta: {
-        title: '结算系统资产通证余额'
-      }
-    }, {
-      path: '/transfer',
-      name: 'transfer',
-      component: transfer,
-      meta: {
-        title: '发送'
-      }
-    }, {
-      path: '/receive',
-      name: 'receive',
-      component: receive,
-      meta: {
-        title: '接收'
-      }
-    }, {
-      path: '/noticeList',
-      name: 'noticeList',
-      component: noticeList,
-      meta: {
-        title: '公告'
-      }
-    }, {
       path: '/noticeDetail/:id',
       name: 'noticeDetail',
       component: noticeDetail,
@@ -214,24 +274,6 @@ export default new Router({
         title: '城市'
       }
     },
-    /**
-     * 我的模块
-     */
-    {
-      path: '/product',
-      name: 'product',
-      component: product
-    },
-    {
-      path: '/qrcode',
-      name: 'qrcode',
-      component: qrcode
-    },
-    {
-      path: '/orderRecord',
-      name: 'orderRecord',
-      component: orderRecord
-    },
     {
       path: '/myorder',
       name: 'myorder',
@@ -248,11 +290,6 @@ export default new Router({
       component: freeze
     },
     {
-      path: '/release/:id',
-      name: 'release',
-      component: release
-    },
-    {
       path: '/user',
       name: 'user',
       component: user
@@ -266,16 +303,6 @@ export default new Router({
       path: '/avatar',
       name: 'avatar',
       component: avatar
-    },
-    {
-      path: '/productOrder',
-      name: 'productOrder',
-      component: productOrder
-    },
-    {
-      path: '/tixian',
-      name: 'tixian',
-      component: tixian
     },
     {
       path: '/convert',
@@ -305,36 +332,6 @@ export default new Router({
       path: '/password',
       name: 'password',
       component: password
-    },
-    // 更改手机号
-    {
-      path: '/changeTel',
-      name: 'changeTel',
-      component: changeTel
-    }, {
-      path: '/changeTel/set',
-      name: 'set',
-      component: set
-    },
-    // 设置密码
-    {
-      path: '/changePass/:type',
-      name: 'changePass',
-      component: changePass
-    }, {
-      path: '/changePass/setpass/:type',
-      name: 'setpass',
-      component: setpass
-    },
-    {
-      path: '/language',
-      name: 'language',
-      component: language
-    },
-    {
-      path: '/aboutapp',
-      name: 'aboutApp',
-      component: aboutApp
     }
   ]
 })

@@ -1,13 +1,16 @@
 <template>
   <div id="home">
     <!-- <Header :showTitle="showTitle" :showRight="showRight">
-      <p slot="title">{{lang.lable1}}</p>
-      <router-link class="message-icon" slot="right" to="/message"><img src="../../assets/img/message.png" alt=""></router-link>
+      <p slot="title">结算系统</p>
+      <router-link class="message-icon" slot="right" to="/noticeList"><img src="../../assets/img/notice.png" alt=""></router-link>
     </Header> -->
     <header>
       <!-- <router-link class="message-icon" ><img src="../../assets/img/message.png" alt=""></router-link> -->
       结算系统
       <!-- <div  class="scan"></div> -->
+      <!-- <router-link class="message-icon" slot="right" to="/noticeList">
+        <img src="../../assets/img/notice.png" alt="">
+      </router-link> -->
     </header>
     <div class="container" ref="wrapper">
       <div class="wrapper">
@@ -57,9 +60,9 @@
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/tixian.png" alt=""></div></div>
             <p class="title">立即提现</p>
           </div>
-          <div class="right" @click="goDetail('/message')">
-            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/zixun.png" alt=""></div></div>
-            <p class="title">消息</p>
+          <div class="right" @click="goDetail('/noticeList')">
+            <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/notice.png" alt=""></div></div>
+            <p class="title">公告</p>
           </div>
         </div>
       </div>
@@ -263,12 +266,15 @@ window.reviced = function (res) {
       margin-left -384px
     }
     .message-icon
-      height 2.8rem
+      position absolute
+      top .5rem
+      right .8rem
+      height 1.8rem
       display block
       padding-left .6rem
       img
-        height 1.6rem
-        margin-top .6rem
+        display block
+        height 1.4rem
     .scan
       height 2.8rem
       display block

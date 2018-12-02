@@ -134,7 +134,7 @@ export default {
   top 0
   left 0.6rem
   right .6rem
-  bottom 0
+  bottom 2.8rem
   font-size .8rem
   color #333
   overflow-y scroll

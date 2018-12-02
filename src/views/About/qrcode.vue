@@ -59,7 +59,7 @@ export default {
   .container
     position absolute
     top 2.8rem
-    bottom 0
+    bottom 2.8rem
     left 0
     right 0
     padding 0 .8rem

@@ -5,24 +5,28 @@
     </Header>
     <div class="container" ref="wrapper">
       <div class="wrapper">
-        <div class="information">
+        <!-- <div class="information">
           <div class="header">
             <div class="nickName">{{data.nickname}}</div>
           </div>
           <p class="copyContent">{{address}}</p>
           <p  v-clipboard:copy="address"
               v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p>
-        </div>
+        </div> -->
         <div class="cell">
-          <!-- <mt-cell title="分享奖励" is-link to="/reward">
+          <!-- <mt-cell title="我的分享" is-link to="/jstree">
             <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
           </mt-cell> -->
-          <!-- <mt-cell title="立即提现" is-link to="/tixian">
+          <mt-cell title="我的钱包" is-link @click.native="goPages('/release/', data.all_point)">
             <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
-          </mt-cell> -->
-          <!-- <mt-cell title="我的二维码" is-link to="/qrcode">
-            <img slot="icon" src="../../assets/img/qrcode.png" width="24" height="24">
-          </mt-cell> -->
+            {{data.all_point}}
+          </mt-cell>
+          <mt-cell title="账单记录" is-link to="/orderRecord">
+            <img slot="icon" src="../../assets/img/record.png" width="24" height="24">
+          </mt-cell>
+          <mt-cell title="消息中心" is-link to="/message">
+            <img slot="icon" src="../../assets/img/zixun.png" width="24" height="24">
+          </mt-cell>
           <mt-cell title="手机号码" is-link to="/changeTel">
             <img slot="icon" src="../../assets/img/tel.png" width="24" height="24">
           </mt-cell>
@@ -56,6 +60,7 @@ export default {
       address: '',
       data: {},
       lang: {},
+      money: {},
       layoutShow: false
     }
   },
