@@ -82,7 +82,7 @@ export default {
   font-size .8rem
   overflow-x hidden
   overflow-y auto
-  color #999
+  color #333
   .container
     position absolute
     top 2.8rem

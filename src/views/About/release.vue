@@ -98,7 +98,7 @@ export default {
       width: 90%;
       margin: 1rem auto;
       padding: 1rem 0;
-      color: #ebebeb;
+      color: #333;
       text-align: center;
       -webkit-box-shadow: 0px 2px 1px 3px #333;
       box-shadow: 0px 2px 1px 3px #333;
@@ -126,7 +126,7 @@ export default {
         transform:rotateX(0deg) rotateY(0deg);
         -webkit-transform:rotateX(0deg) rotateY(0deg);
         opacity:1;
-        box-shadow 0px 0px 10px 2px #cda041
+        box-shadow 0px 0px 10px 2px #333
       .current
         font-size .8rem
       .curMoney
@@ -150,8 +150,8 @@ export default {
           margin-top 8px;
           height 60px
           line-height 30px
-          border-top 1px solid #ddd
-          border-bottom 1px solid #ddd
+          border-top 1px solid #ebebeb
+          border-bottom 1px solid #ebebeb
           .top,.bottom
             display flex
             justify-content space-between

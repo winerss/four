@@ -145,7 +145,7 @@ export default {
     background-color rgb(205,160,65)
     border-color #cda041
   .mint-radio-input:checked + .mint-radio-core::after
-    background-color #000
+    background-color #fff
   .mint-radio-input + .mint-radio-core
     background-color rgba(0,0,0,0)
     border-color #cda041

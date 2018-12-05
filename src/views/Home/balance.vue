@@ -126,7 +126,7 @@ export default {
   right 0
   bottom 2.8rem
   font-size .8rem
-  color #ebebeb
+  color #333
   overflow-y scroll
   -webkit-overflow-scrolling touch
   &::-webkit-scrollbar
@@ -143,7 +143,7 @@ export default {
         padding 2rem 0
       }
       text-align center
-      background #0f0f0f
+      // background #0f0f0f
       border-radius .4rem
       -webkit-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
       -moz-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
@@ -163,7 +163,7 @@ export default {
         transform:rotateX(0deg) rotateY(0deg);
         -webkit-transform:rotateX(0deg) rotateY(0deg);
         opacity:1;
-        box-shadow 0px 0px 10px 2px #cda041
+        box-shadow 0px 0px 10px 2px #333
       .current
         font-size .8rem
         @media (min-width 768px) {
@@ -195,8 +195,8 @@ export default {
           padding 0 .6rem
           height 60px
           line-height 30px
-          border-top 1px solid #999
-          border-bottom 1px solid #999
+          border-top 1px solid #ebebeb
+          border-bottom 1px solid #ebebeb
           .top,.bottom
             display flex
             justify-content space-between

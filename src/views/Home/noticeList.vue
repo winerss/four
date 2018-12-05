@@ -70,12 +70,11 @@ export default {
     &::-webkit-scrollbar
       display none
     .items
-      margin-top 1rem
       .mint-cell-wrapper
         background-image none
       .mint-cell
         margin-top .4rem
-        color #fff
+        color #333
         background none
         border-bottom 1px solid #ddd
         .mint-cell-text

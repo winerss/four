@@ -1,60 +1,74 @@
 <template>
-  <div id="jstree">
-    <Header :showLeft="showLeft" :showTitle="showTitle">
-      <p slot="title">我的分享</p>
+  <div id='jstree'>
+    <Header :showLeft='showLeft' :showTitle='showTitle'>
+      <p slot='title'>我的分享</p>
     </Header>
-    <div class="container">
-      <v-jstree :data="data" show-checkbox multiple allow-batch whole-row @item-click="itemClick"></v-jstree>
+    <div class='container'>
+    <el-tree
+        :data="data"
+        :props="defaultProps"
+        @node-click="handleNodeClick">
+    </el-tree>
     </div>
   </div>
 </template>
 
 <script>
 import Header from '@/components/header'
-import VJstree from 'vue-jstree'
 export default {
   data () {
     return {
       showLeft: true,
       showTitle: true,
-      data: [{
-          "text": "root",
-          "selected": "true",
-          "children": [{
-            "text": "A00001",
-            "children": [{
-              "text": "A00002",
-              "children": [{
-                  "text": "A00003"
-                }]
-              }]
-            }, {
-              "text": "B00001"
-            }, {
-              "text": "C00001"
-            }, {
-              "text": "D00001"
-            }
-          ]
-        }
-      ]
+      id: 1,
+      data: [],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
+      }
     }
   },
   methods: {
-    itemClick (node) {
-      console.log(node.model.text + ' clicked !')
+    handleNodeClick (node) {
+      console.log(node)
+      var params = new FormData()
+      params.append('sid', localStorage.getItem('sid'))
+      params.append('uid', node.id)
+      this.axios.post(process.env.API_ROOT + '/api/transfer/tree', params).then((res) => {
+        let data = res.data.data
+        let childArray = []
+        data.forEach(element => {
+          childArray.push({
+            id: element.id,
+            label: element.name,
+            children: []
+          })
+        })
+        node.children = childArray
+      })
+    },
+    get_user_info () {
+      var params = new FormData()
+      params.append('sid', localStorage.getItem('sid'))
+      this.axios.post(process.env.API_ROOT + '/api/user/get_user_info', params).then((res) => {
+        this.data.push({
+          id: res.data.data.id,
+          label: res.data.data.nickname,
+          children: []
+        })
+      })
     }
   },
   components: {
-    Header,
-    VJstree
+    Header
   },
   mounted () {
+    this.get_user_info()
   }
 }
 </script>
 
-<style lang="stylus">
+<style lang='stylus'>
 #jstree
   .container
     position absolute
@@ -69,5 +83,6 @@ export default {
     -webkit-overflow-scrolling touch
     &::-webkit-scrollbar
       display none
-    // background #fff
+    .el-tree
+      background none
 </style>

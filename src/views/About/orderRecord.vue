@@ -80,7 +80,7 @@ export default {
       left 0
       right 0
       padding 1rem 0
-      background #0f0f0f
+      background #fff
       font-size 0
       @media (min-width 768px) {
         width 768px
@@ -98,8 +98,8 @@ export default {
         margin-top 8px;
         height 2.4rem
         line-height 1.2rem
-        border-top 1px solid #999
-        border-bottom 1px solid #999
+        border-top 1px solid #ebebeb
+        border-bottom 1px solid #ebebeb
         .top,.bottom
           display flex
           justify-content space-between

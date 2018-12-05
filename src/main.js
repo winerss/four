@@ -10,10 +10,13 @@ import store from './vuex'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(VueClipboard)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 Vue.use(MintUI)
+Vue.use(ElementUI)
 // 过滤器
 Vue.filter('money', function (value) {
   if (!value) return '0.00'
