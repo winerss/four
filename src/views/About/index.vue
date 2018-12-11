@@ -14,9 +14,9 @@
               v-clipboard:success="onCopy" class="copy">{{lang.label2}}</p> -->
         </div>
         <div class="cell">
-          <mt-cell title="我的分享" is-link to="/jstree">
+          <!-- <mt-cell title="我的分享" is-link to="/jstree">
             <img slot="icon" src="../../assets/img/share.png" width="24" height="24">
-          </mt-cell>
+          </mt-cell> -->
           <mt-cell title="我的钱包" is-link @click.native="goPages('/release/', data.all_point)">
             <img slot="icon" src="../../assets/img/tixian.png" width="24" height="24">
             {{data.all_point}}
