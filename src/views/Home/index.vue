@@ -42,21 +42,21 @@
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/plane.png" alt=""></div></div>
             <p class="title">{{lang.lable6}}</p>
           </div>
-         <div class="middle" @click="goDetail('/orderRecord')">
+         <div class="middle middle1" @click="goDetail('/orderRecord')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/record.png" alt=""></div></div>
             <p class="title">账单记录</p>
           </div>
-          <div class="right" @click="goDetail('/receive')">
+          <!-- <div class="right" @click="goDetail('/receive')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/plane1.png" alt=""></div></div>
             <p class="title">{{lang.lable8}}</p>
-          </div>
+          </div> -->
         </div>
         <div class="operation">
           <div class="left" @click="goDetail('/qrcode')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/qrcode.png" alt=""></div></div>
             <p class="title">我的二维码</p>
           </div>
-         <div class="middle" @click="goDetail('/tixian')">
+         <div class="middle middle2" @click="goDetail('/tixian')">
             <div class="imgwrap animated rubberBand"><div class="img"><img src="../../assets/img/tixian.png" alt=""></div></div>
             <p class="title">立即提现</p>
           </div>
@@ -301,8 +301,8 @@ window.reviced = function (res) {
         margin 1rem auto
         padding 2rem 0
       }
-      color #ebebeb
-      background #0f0f0f
+      color #333
+      // background #0f0f0f
       text-align center
       border-radius .4rem
       -webkit-transition: transform .5s, opacity .5s, box-shadow .5s ease-out .2s;
@@ -323,7 +323,7 @@ window.reviced = function (res) {
         transform:rotateX(0deg) rotateY(0deg);
         -webkit-transform:rotateX(0deg) rotateY(0deg);
         opacity:1;
-        box-shadow 0px 0px 10px 2px #cda041
+        box-shadow 0px 0px 10px 2px #999
       .title
         font-size .8rem
         line-height 1rem
@@ -381,7 +381,7 @@ window.reviced = function (res) {
         .title
           line-height 1.6rem
           font-size .6rem
-          color #ebebeb
+          color #333
         .money
           line-height 1.4rem
           font-size .8rem
@@ -397,7 +397,6 @@ window.reviced = function (res) {
       display flex
       padding .8rem 0
       border-top 1px solid #cda041
-      border-bottom 1px solid #cda041
       .left,.middle,.right
         flex 1
         text-align center
@@ -405,23 +404,25 @@ window.reviced = function (res) {
           margin 0 auto
           height 3.4rem
           width 3.4rem
-          background url('../../assets/img/bubble.png')
+          // background url('../../assets/img/bubble.png')
           background-size cover
           img
             height 2rem
             width 2rem
             margin .7rem
         .title
-          color #ebebeb
+          color #333
           line-height 2rem
           font-size .8rem
           width 100px
-          margin 0 auto
+          margin -1rem auto 0
           overflow hidden
           text-overflow ellipsis
           white-space nowrap
-      .middle
+      .middle2
         border-right 1px solid #cda041
+        border-left 1px solid #cda041
+      .middle1
         border-left 1px solid #cda041
     .notice
       display flex

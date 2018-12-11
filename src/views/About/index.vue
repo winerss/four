@@ -7,7 +7,11 @@
       <div class="wrapper">
         <div class="information">
           <div class="header">
-            <div class="nickName"><img src="../../assets/img/avatar.png" alt="">{{data.nickname}}</div>
+            <div class="nickName">
+              <img src="../../assets/img/avatar.png" alt="">
+              {{data.nickname}}
+              <p class="lv">{{data.dengji}}</p>
+            </div>
           </div>
           <!-- <p class="copyContent">{{address}}</p>
           <p  v-clipboard:copy="address"
@@ -187,13 +191,13 @@ export default {
   font-size .8rem
   overflow-x hidden
   overflow-y auto
-  color #fff
+  color #333
   .mint-cell
     background none
-    border-bottom 1px solid #666
+    border-bottom 1px solid #ebebeb
     .mint-cell-text
       font-size .6rem
-      color #ccc
+      color #333
     .mint-cell-allow-right::after
       // border: solid 2px #00c087
       border-bottom-width 0
@@ -211,25 +215,29 @@ export default {
       padding .8rem
       background #fff
     .information
-      height 8rem
+      height 10rem
       // padding 2rem 1.8rem 5rem
-      color #999
+      color #ebebeb
       background: url('../../assets/img/banner.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       @media (min-width 768px) {
-        height 10rem
+        height 12rem
         padding 1.5rem 10%
       }
       overflow hidden
       .header
-        height 4rem
-        width 4rem
-        margin 1rem auto
-        font-size 1.4rem
+        height 6rem
+        width 6rem
+        margin 1.5rem auto
+        font-size 1.8rem
         text-align center
         border-radius 50%
+        .lv{
+          margin-top .5rem
+          font-size 1rem
+        }
         @media (min-width 768px) {
           height 6rem
           width 6rem

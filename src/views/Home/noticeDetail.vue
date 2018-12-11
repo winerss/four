@@ -77,5 +77,5 @@ export default {
     .content
       padding .6rem
       margin-top 1rem
-      color #ebebeb
+      color #333
 </style>

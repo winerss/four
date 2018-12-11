@@ -101,8 +101,8 @@ export default {
       overflow auto
       .items
         .item
-            border-bottom 1px solid #999
-            color #999
+            border-bottom 1px solid #ebebeb
+            color #333
             padding .4rem .6rem
             margin-top .4rem
             .top, .center,.detail, .bottom

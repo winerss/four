@@ -90,7 +90,7 @@ export default {
   right 0
   bottom 0
   font-size .8rem
-  color #999
+  color #333
   overflow-y scroll
   -webkit-overflow-scrolling touch
   &::-webkit-scrollbar
@@ -114,7 +114,7 @@ export default {
             text-align left
             background #cda041
             border-radius .4rem
-            color #fff
+            color #333
             padding-right .4rem
             span
               position absolute
@@ -133,7 +133,7 @@ export default {
             text-align left
             background #ccc
             border-radius .4rem
-            color #fff
+            color #333
             padding-left .4rem
             span
               position absolute
@@ -144,7 +144,7 @@ export default {
               height: 0;
               border-width: 10px;
               border-style: solid;
-              border-color: #ccc transparent transparent transparent;
+              border-color: #333 transparent transparent transparent;
   .bottom
     position fixed
     left 0

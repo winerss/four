@@ -94,10 +94,10 @@ export default {
           width 80px
       .mint-cell
         margin-top .8rem
-        color #ebebeb
+        color #333
         background none
-        border-top 1px solid #999
-        border-bottom 1px solid #999
+        border-top 1px solid #ebebeb
+        border-bottom 1px solid #ebebeb
         .mint-cell-value
           font-size .8rem
           color #cda041
