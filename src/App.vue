@@ -15,7 +15,8 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: url('assets/img/bg.jpg');
+  // background: url('assets/img/bg.jpg');
+  background #fff
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -65,6 +65,13 @@ export default {
       })
     }
   },
+  mounted () {
+    var params = new FormData()
+    params.append('sid', localStorage.getItem('sid'))
+    this.axios.post(process.env.API_ROOT + '/api/transfer/websitename', params).then((res) => {
+      document.title = res.data.data
+    })
+  },
   components: {
     Header
   }

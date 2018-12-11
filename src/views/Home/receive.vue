@@ -5,10 +5,7 @@
     </Header>
     <div class="container">
       <div class="logo">
-        <img src="../../assets/img/logo_i.png" alt="">
-      </div>
-      <div class="logo-1">
-        <img src="../../assets/img/logo_1.png" alt="">
+        <img src="../../assets/img/logo.jpg" alt="">
       </div>
       <div class="qrcode">
         <div id="qrcode"></div>

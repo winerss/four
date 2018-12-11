@@ -110,7 +110,7 @@ export default new Router({
         name: 'balance',
         component: balance,
         meta: {
-          title: '结算系统资产通证余额'
+          title: '资产通证余额'
         }
       }, {
         path: '/release/:id',

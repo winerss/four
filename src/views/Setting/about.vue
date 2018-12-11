@@ -5,7 +5,7 @@
     </Header>
     <div class="container">
       <div class="logo">
-        <img src="../../assets/img/logo_i.png" alt="">
+        <img src="../../assets/img/logo.jpg" alt="">
         <p class="info">{{lang.version}} 1.0.0</p>
       </div>
       <div class="items">

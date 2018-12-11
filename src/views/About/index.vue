@@ -8,7 +8,10 @@
         <div class="information">
           <div class="header">
             <div class="nickName">
-              <img src="../../assets/img/avatar.png" alt="">
+              <div class="img-wrapper">
+                <img :src='this.url+data.faceurl' alt="">
+                <input class="selectImg" @change="upload($event)" type="file"  name="files" accept="image/*"/>
+              </div>
               {{data.nickname}}
               <p class="lv">{{data.dengji}}</p>
             </div>
@@ -64,9 +67,14 @@ export default {
       address: '',
       data: {},
       lang: {},
+      avatar: '',
       money: {},
+      url: '',
       layoutShow: false
     }
+  },
+  created () {
+    this.url = process.env.API_ROOT
   },
   methods: {
     onCopy: function (e) {
@@ -86,6 +94,24 @@ export default {
     logout () {
       localStorage.clear()
       this.$router.push('/login')
+    },
+    upload (e) {
+      let file = e.target.files[0]
+      let param = new FormData()
+      param.append('file', file, file.name)
+      param.append('sid', localStorage.getItem('sid'))
+      let config = {
+        headers: {'Content-Type': 'multipart/form-data'}
+      }
+      // 添加请求头
+      this.axios.post(process.env.API_ROOT + '/api/user/change_faceurl', param, config).then(response => {
+        this.$toast({
+          message: response.data.msg,
+          position: 'bottom',
+          duration: 1000
+        })
+        window.location.reload()
+      })
     },
     _initScroll () {
       this.$nextTick(() => {
@@ -120,7 +146,7 @@ export default {
     getAddress () {
       var params = new FormData()
       params.append('sid', localStorage.getItem('sid'))
-      this.axios.post(process.env.API_ROOT + '//api/user/transfer_host', params).then((res) => {
+      this.axios.post(process.env.API_ROOT + '/api/user/transfer_host', params).then((res) => {
         let data = res.data.data[0]
         this.address = data
       })
@@ -192,6 +218,7 @@ export default {
   overflow-x hidden
   overflow-y auto
   color #333
+  background #fff
   .mint-cell
     background none
     border-bottom 1px solid #ebebeb
@@ -217,7 +244,7 @@ export default {
     .information
       height 10rem
       // padding 2rem 1.8rem 5rem
-      color #ebebeb
+      color #333
       background: url('../../assets/img/banner.jpg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -242,13 +269,26 @@ export default {
           height 6rem
           width 6rem
         }
-        img
-          height 4rem
-          width 4rem
-          @media (min-width 768px) {
-            height 6rem
-            width 6rem
-          }
+        .img-wrapper
+          position relative
+          overflow hidden
+          input
+            position absolute
+            z-index 9999
+            left 0
+            right 0
+            top 0
+            bottom 0
+            opacity 0
+            fill-opacity 0
+            background rgba(0,0,0,0)
+          img
+            height 4rem
+            width 4rem
+            @media (min-width 768px) {
+              height 6rem
+              width 6rem
+            }
       .copyContent
         line-height 3rem
         overflow hidden

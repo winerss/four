@@ -6,7 +6,7 @@
     </Header> -->
     <header>
       <!-- <router-link class="message-icon" ><img src="../../assets/img/message.png" alt=""></router-link> -->
-      结算系统
+      {{name}}
       <!-- <div  class="scan"></div> -->
       <!-- <router-link class="message-icon" slot="right" to="/noticeList">
         <img src="../../assets/img/notice.png" alt="">
@@ -83,6 +83,7 @@ export default {
       yesterday: 0,
       lang: {},
       banner: [],
+      name: '',
       url: '',
       isActive: true
     }
@@ -125,6 +126,14 @@ export default {
         console.log(data)
       })
     },
+    websitename () {
+      var params = new FormData()
+      params.append('sid', localStorage.getItem('sid'))
+      this.axios.post(process.env.API_ROOT + '/api/transfer/websitename', params).then((res) => {
+        this.name = res.data.data
+        document.title = res.data.data
+      })
+    },
     goDetail (path, type, money) {
       if (type) {
         this.$router.push(path + '/' + type + '=' + money)
@@ -157,6 +166,7 @@ export default {
     this.get_user_info()
     this.get_today()
     this.get_banner()
+    this.websitename()
     let lang = {
       en: {
         lable1: 'Fairy grass mill',
@@ -178,7 +188,7 @@ export default {
         lable16: 'I have bottom line'
       },
       cn: {
-        lable1: '结算系统资产通证',
+        lable1: '资产通证',
         lable2: '当前收益',
         lable3: '昨日收益',
         lable4: '消费积分',
