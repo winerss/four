@@ -76,10 +76,7 @@ export default new Router({
       children: [{
         path: '/home',
         name: 'home',
-        component: home,
-        meta: {
-          title: '结算系统'
-        }
+        component: home
       }, {
         path: '/product',
         name: 'product',

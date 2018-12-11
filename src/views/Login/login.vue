@@ -6,7 +6,7 @@
     </Header>
     <div class="container">
       <div class="logo">
-        <img src="../../assets/img/logo_i.png" alt="">
+        <img src="../../assets/img/logo.jpg" alt="">
       </div>
       <mt-field label="用户名" placeholder="用户名" v-model='form.name'></mt-field>
       <mt-field label="登录密码" placeholder="请输入登录密码" type="password" v-model='form.password'></mt-field>
@@ -79,9 +79,10 @@ export default {
   right 0
   bottom 0
   font-size .8rem
+  background #fff
   color #000
   input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill
-    -webkit-text-fill-color: #ededed !important;
+    -webkit-text-fill-color: #333 !important;
     -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;
     background-color:transparent;
     background-image: none;
